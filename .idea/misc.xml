@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/drawable/edittext_shadow.xml" value="0.294" />
+        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/drawable/radius.xml" value="0.294" />
+        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/drawable/radius_colored.xml" value="0.294" />
+        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main.xml" value="0.5" />
       </map>
     </option>
   </component>
