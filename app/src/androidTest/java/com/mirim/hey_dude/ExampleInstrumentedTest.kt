@@ -1,4 +1,4 @@
-package com.example.hey_dude
+package com.mirim.hey_dude
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

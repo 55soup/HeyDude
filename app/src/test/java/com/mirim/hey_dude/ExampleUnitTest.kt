@@ -1,4 +1,4 @@
-package com.example.hey_dude
+package com.mirim.hey_dude
 
 import org.junit.Test
 

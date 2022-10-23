@@ -1,4 +1,4 @@
-package com.example.hey_dude;
+package com.mirim.hey_dude;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.hey_dude.R;
 
 import java.util.ArrayList;
 

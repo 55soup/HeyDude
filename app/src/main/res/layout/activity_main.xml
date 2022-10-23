@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context="com.mirim.hey_dude.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
