@@ -11,6 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hey_dude">
         <activity
+            android:name="com.mirim.hey_dude.LoginActivity"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
             android:name="com.mirim.hey_dude.Fragment4"
             android:exported="false" />
         <activity
@@ -32,11 +41,7 @@
             android:name="com.mirim.hey_dude.NavBar"
             android:exported="true"
             tools:ignore="DuplicateActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

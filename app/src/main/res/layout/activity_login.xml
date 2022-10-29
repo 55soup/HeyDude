@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mirim.hey_dude.LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Hey Dude !"
+        android:textColor="#A8A0FF"
+        android:textStyle="bold"
+        android:textSize="36dp"
+        android:layout_marginTop="100dp" />
+
+    <EditText
+        android:id="@+id/loginID"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:background="@drawable/login_edittext"
+        android:hint="이메일"
+        android:paddingLeft="10dp"
+
+        android:textSize="12dp"
+        android:layout_marginTop="104dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:paddingLeft="10dp"
+        android:id="@+id/loginPW"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:background="@drawable/login_edittext"
+        android:hint="비밀번호"
+        android:textSize="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:text="로그인"
+        android:background="@drawable/login_btn_round"
+        android:textStyle="bold"
+        android:textSize="12dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="66dp"/>
+
+    <Button
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:background="@drawable/signin_btn_round"
+        android:text="회원가입"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>
