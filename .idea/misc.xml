@@ -3,24 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/drawable/ic_baseline_mic_none_24.xml" value="0.1" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/drawable/shadow_item.xml" value="0.307" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/drawable/style.xml" value="0.3075" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/layout/activity_fragment3.xml" value="0.36614583333333334" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/layout/activity_fragment4.xml" value="0.36614583333333334" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/layout/activity_main2.xml" value="0.17806484295845998" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/layout/item_recyclerview.xml" value="0.36614583333333334" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/layout/nav_bar.xml" value="0.33" />
-        <entry key="..\:/Android_Projects/Projects/HeyDude/app/src/main/res/menu/bottom_menu.xml" value="0.5" />
-        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/drawable/edittext_shadow.xml" value="0.294" />
-        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/drawable/radius.xml" value="0.294" />
-        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/drawable/radius_colored.xml" value="0.294" />
-        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/drawable/shadow_item.xml" value="0.284" />
-        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main.xml" value="0.5" />
-        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main2.xml" value="0.36614583333333334" />
-        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/item_recyclerview.xml" value="0.45849802371541504" />
+        <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/button_round.xml" value="0.198" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/edittext_shadow.xml" value="0.195" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/login_edittext.xml" value="0.198" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/signin_btn_round.xml" value="0.198" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_main2.xml" value="0.19375" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/item_recyclerview.xml" value="0.190625" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/nav_bar.xml" value="0.190625" />
       </map>
     </option>
   </component>
