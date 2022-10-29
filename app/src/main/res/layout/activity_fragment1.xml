@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/end_color"
     tools:context="com.mirim.hey_dude.Fragment1">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
