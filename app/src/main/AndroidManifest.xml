@@ -11,8 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hey_dude">
         <activity
-            android:name="com.mirim.hey_dude.LoginActivity"
-            android:exported="true" >
+            android:name="com.mirim.hey_dude.NavBar"
+            android:exported="true"
+            tools:ignore="MissingClass">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
@@ -32,13 +33,13 @@
             android:name="com.mirim.hey_dude.Fragment1"
             android:exported="false" />
         <activity
+            android:name="com.mirim.hey_dude.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name="com.mirim.hey_dude.MainActivity2"
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.mirim.hey_dude.NavBar"
             android:exported="true"
             tools:ignore="DuplicateActivity">
 

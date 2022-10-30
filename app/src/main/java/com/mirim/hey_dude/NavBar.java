@@ -34,6 +34,7 @@ public class NavBar extends AppCompatActivity {
         fragment3 = new Fragment3();
         fragment4 = new Fragment4();
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
