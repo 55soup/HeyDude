@@ -8,11 +8,12 @@ import android.os.Bundle
 import com.example.hey_dude.R
 
 class SetAlarmActivity : AppCompatActivity() {
-//    private lateinit var binding : ActivityDetailBinding
+
     companion object {
         fun newIntent(context: Context): Intent {
             return Intent(context, SetAlarmActivity::class.java)
         }
+
     }
     
     override fun onCreate(savedInstanceState: Bundle?) {
