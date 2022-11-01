@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hey_dude">
         <activity
+            android:name="com.mirim.hey_dude.SetAlarmActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.mirim.hey_dude.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name="com.mirim.hey_dude.Fragment4"
             android:exported="false" />
         <activity
