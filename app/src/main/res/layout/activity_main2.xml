@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mirim.hey_dude.MainActivity2"
-    android:orientation="vertical">
-
-    <SearchView
-        android:id="@+id/search_view"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:queryHint="친구를 찾아보세요! "/>
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/recyclerView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        tools:ignore="MissingConstraints" />-->
-
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+       <SearchView
+           android:id="@+id/search_view"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:queryHint="친구를 찾아보세요! "/>
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/recyclerView"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:nestedScrollingEnabled="false"
+           android:overScrollMode="never"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

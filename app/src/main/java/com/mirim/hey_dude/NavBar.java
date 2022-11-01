@@ -72,7 +72,7 @@ public class NavBar extends AppCompatActivity {
         fab_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SetAlarmActivity.class);
+                Intent intent = new Intent(getApplication(), SetAlarmActivity.class);
                 startActivity(intent);
                 //액티비티 이동 시 화면 전환 애니메이션
                 overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);

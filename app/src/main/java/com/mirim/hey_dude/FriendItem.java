@@ -3,9 +3,9 @@ package com.mirim.hey_dude;
 public class FriendItem {
     String name;
     String today;
-    int resourceId;
+    String resourceId;
 
-    public FriendItem(String name, String today, int resourceId) {
+    public FriendItem() {
         this.name = name;
         this.today = today;
         this.resourceId = resourceId;
@@ -19,7 +19,7 @@ public class FriendItem {
         return today;
     }
 
-    public int getResourceId() {
+    public String getResourceId() {
         return resourceId;
     }
 
@@ -31,7 +31,7 @@ public class FriendItem {
         this.today = today;
     }
 
-    public void setResourceId(int resourceId) {
+    public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
 }
