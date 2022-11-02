@@ -5,39 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.mirim.hey_dude.Fragment4"
-    android:layout_gravity="center"
-    android:gravity="center">
+    tools:context="com.mirim.hey_dude.Fragment4">
 
     <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="330dp">
         <ImageView
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:src="@drawable/gradient"/>
+            android:layout_width="410dp"
+            android:layout_height="290dp"
+            android:src="@drawable/gradient" />
         <ImageButton
+            android:id="@+id/btnSet"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:background="@drawable/radius"
-            android:src="@color/purple_700"/>
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_settings_24"
+            android:background="#00000000"
+            android:layout_gravity="right"
+            android:layout_margin="15dp"/>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal|bottom">
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/profile_photo"
+                android:backgroundTint="#ff0000" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                app:fabCustomSize="27dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_create_15"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="right|bottom"/>
+        </FrameLayout>
     </FrameLayout>
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="김하진"
-        android:textSize="20dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="w2128@e-mirim.hs.kr"
-        android:textSize="10dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="나 좀 깨워주라 애들아~" />
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="김하진"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="w2128@e-mirim.hs.kr"
+            android:textSize="10dp"
+            android:layout_marginBottom="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나 좀 깨워주라 애들아~" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

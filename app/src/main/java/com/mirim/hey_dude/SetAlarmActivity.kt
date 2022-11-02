@@ -23,7 +23,6 @@ class SetAlarmActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        
         overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit)
     }
 }
