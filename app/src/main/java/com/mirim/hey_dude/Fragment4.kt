@@ -23,7 +23,6 @@ class Fragment4 : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var btnSet: ImageButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +40,10 @@ class Fragment4 : Fragment() {
         val view: View = inflater.inflate(R.layout.activity_fragment4, container, false)
         // Inflate the layout for this fragment
 
-        btnSet?.setOnClickListener {
-                view -> Log.d("mytag","btnSet 클릭")
+        val btnSet = view.findViewById<ImageButton>(R.id.btnSet)
+
+        btnSet.setOnClickListener {
+                Log.d("mytag","btnSet 클릭")
         }
 
         return view
