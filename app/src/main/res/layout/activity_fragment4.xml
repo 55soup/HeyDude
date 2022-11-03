@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.mirim.hey_dude.Fragment4">
-
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="330dp">
@@ -32,6 +31,7 @@
                 android:src="@drawable/profile_photo"
                 android:backgroundTint="#ff0000" />
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnModify"
                 app:fabCustomSize="27dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
