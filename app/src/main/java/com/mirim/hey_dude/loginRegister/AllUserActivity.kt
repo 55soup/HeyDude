@@ -1,12 +1,12 @@
-package com.mirim.hey_dude
+package com.mirim.hey_dude.loginRegister
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.hey_dude.R
 
-class LoginActivity : AppCompatActivity() {
+class AllUserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_all_user)
     }
 }

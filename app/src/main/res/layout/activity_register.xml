@@ -1,55 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mirim.hey_dude.loginRegister.LoginActivity">
+    tools:context="com.mirim.hey_dude.loginRegister.RegisterActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Hey Dude !"
+        android:gravity="left"
+        android:layout_marginLeft="42dp"
+        android:text="회원가입"
         android:textColor="#A8A0FF"
         android:textStyle="bold"
-        android:textSize="36dp"
-        android:layout_marginTop="160dp" />
+        android:textSize="24dp"
+        android:layout_marginTop="148dp" />
 
     <EditText
-        android:id="@+id/loginID"
+        android:id="@+id/inputName"
         android:layout_width="320dp"
-        android:layout_height="62dp"
+        android:layout_height="70dp"
         android:background="@drawable/login_edittext"
-        android:hint="이메일"
+        android:hint="닉네임"
         android:paddingLeft="10dp"
         android:textSize="12dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="40dp"
         android:layout_gravity="center"/>
-
     <EditText
         android:paddingLeft="10dp"
-        android:id="@+id/loginPW"
+        android:id="@+id/inputID"
         android:layout_width="320dp"
-        android:layout_height="62dp"
+        android:layout_height="70dp"
+        android:background="@drawable/login_edittext"
+        android:hint="아이디"
+        android:textSize="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
+    <EditText
+        android:paddingLeft="10dp"
+        android:id="@+id/inputPW"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
         android:background="@drawable/login_edittext"
         android:hint="비밀번호"
         android:textSize="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_gravity="center"/>
-
-    <Button
-        android:id="@+id/loginBtn"
+    <EditText
+        android:paddingLeft="10dp"
+        android:id="@+id/checkPW"
         android:layout_width="320dp"
-        android:layout_height="48dp"
-        android:text="로그인"
-        android:background="@drawable/login_btn_round"
-        android:textStyle="bold"
+        android:layout_height="70dp"
+        android:background="@drawable/login_edittext"
+        android:hint="비밀번호 확인"
         android:textSize="12dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="66dp"/>
-
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"/>
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="320dp"
@@ -60,5 +68,5 @@
         android:background="@drawable/radius"
         android:textColor="@color/main_color"
         android:layout_gravity="center"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="40dp"/>
 </LinearLayout>

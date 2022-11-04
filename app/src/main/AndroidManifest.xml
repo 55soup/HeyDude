@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hey_dude">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,14 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hey_dude">
         <activity
+            android:name="com.mirim.hey_dude.loginRegister.AllUserActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.mirim.hey_dude.loginRegister.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name="com.mirim.hey_dude.SettingActivity"
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.SetAlarmActivity"
             android:exported="false" />
         <activity
-            android:name="com.mirim.hey_dude.LoginActivity"
-            android:exported="false" />
+            android:name="com.mirim.hey_dude.loginRegister.LoginActivity"
+            android:exported="true"/>
         <activity
             android:name="com.mirim.hey_dude.Fragment4"
             android:exported="false" />
@@ -37,7 +45,7 @@
         <activity
             android:name="com.mirim.hey_dude.NavBar"
             android:exported="true"
-            tools:ignore="DuplicateActivity">
+            tools:ignore="DuplicateActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
