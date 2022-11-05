@@ -10,7 +10,6 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST
-import java.io.Serializable
 import java.util.*
 
 interface RetroInterface{
@@ -30,7 +29,7 @@ interface RetroInterface{
     fun allUser(): Call<ArrayList<User>>
 
     companion object { // static 처럼 공유객체로 사용가능함. 모든 인스턴스가 공유하는 객체로서 동작함.
-        private const val BASE_URL = "http://본인 컴퓨터 IP 주소:포트번호" //
+        private const val BASE_URL = "http://59.11.196.73:8080" //TODO : 유진이한테 물어보기
 
         fun create(): RetroInterface {
             val gson : Gson =   GsonBuilder().setLenient().create();
@@ -43,29 +42,4 @@ interface RetroInterface{
                 .create(RetroInterface::class.java)
         }
     }
-
-    data class RegisterModel(
-        var name: String,
-        var id: String,
-        var pw: String
-    )
-
-    data class RegisterResult(
-        var message: Boolean
-    )
-
-    data class LoginModel(
-        var id: String,
-        var pw: String
-    )
-
-    data class LoginResult(
-        var UID: Int
-    )
-
-    data class User(
-        val UID: Int,
-        val id: String,
-        val password: String
-    ) : Serializable
 }

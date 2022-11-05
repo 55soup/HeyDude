@@ -45,14 +45,14 @@ class RegisterActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
             }
-            val newUser = RetroInterface.RegisterModel(
+            val newUser = RegisterModel(
                 binding.inputName.text.toString(),
                 binding.inputID.text.toString(),
                 binding.inputPW.text.toString()
             )
 
-            api.register(newUser).enqueue(object: retrofit2.Callback<RetroInterface.RegisterResult>{
-                override fun onResponse(call: Call<RetroInterface.RegisterResult>, response: Response<RetroInterface.RegisterResult>) {
+            api.register(newUser).enqueue(object: retrofit2.Callback<RegisterResult>{
+                override fun onResponse(call: Call<RegisterResult>, response: Response<RegisterResult>) {
                     val result = response.body()?.message ?: return
                     if(result) {
                         Toast.makeText(applicationContext, "회원가입 성공", Toast.LENGTH_SHORT).show()
@@ -65,8 +65,8 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<RetroInterface.RegisterResult>, t: Throwable) {
-                    Log.d("testt", t.message.toString())
+                override fun onFailure(call: Call<RegisterResult>, t: Throwable) {
+                    Log.d("test", t.message.toString())
                 }
             })
         } //회원가입 버튼 클릭 이벤트

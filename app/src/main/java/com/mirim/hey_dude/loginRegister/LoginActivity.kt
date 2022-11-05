@@ -10,7 +10,6 @@ import com.example.hey_dude.R
 import com.example.hey_dude.databinding.ActivityLoginBinding
 import com.mirim.hey_dude.NavBar
 import com.mirim.hey_dude.RetroInterface
-import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
@@ -44,12 +43,12 @@ class LoginActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
             }
-            val loginUser = RetroInterface.LoginModel(
+            val loginUser = LoginModel(
                 binding.loginID.text.toString(),
                 binding.loginPW.text.toString()
             )
-            api.login(loginUser).enqueue(object: Callback<RetroInterface.LoginResult> {
-                override fun onResponse(call: retrofit2.Call<RetroInterface.LoginResult>, response: Response<RetroInterface.LoginResult>) {
+            api.login(loginUser).enqueue(object: Callback<LoginResult> {
+                override fun onResponse(call: retrofit2.Call<LoginResult>, response: Response<LoginResult>) {
                     val user_uid = response.body()?.UID ?: return
                     if(user_uid != -1) {
                         Toast.makeText(applicationContext, "로그인 성공", Toast.LENGTH_SHORT).show()
@@ -65,8 +64,8 @@ class LoginActivity : AppCompatActivity() {
 
                 }
 
-                override fun onFailure(call: retrofit2.Call<RetroInterface.LoginResult>, t: Throwable) {
-                    Log.d("testt", t.message.toString())
+                override fun onFailure(call: retrofit2.Call<LoginResult>, t: Throwable) {
+                    Log.d("test", t.message.toString())
                 }
             })
         }
