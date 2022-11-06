@@ -6,7 +6,7 @@ import android.icu.number.Scale.none
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.hey_dude.R
-
+//알람 설정 페이지
 class SetAlarmActivity : AppCompatActivity() {
 
     companion object {

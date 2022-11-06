@@ -1,14 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.mirim.hey_dude.SetAlarmActivity">
-
-    <TextView
-        android:text="알람 설정 페이지!"
-        android:gravity="center"
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/topBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="닫기" />
+        <TextView
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:text="알람 추가"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="저장" />
+    </LinearLayout>
+
+    <TimePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:timePickerMode="spinner" />
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="36dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+        <LinearLayout
+            android:gravity="center"
+            android:background="@drawable/round_layout"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="24dp"
+            android:layout_height="50dp">
+            <EditText
+                android:textSize="12dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:hint="레이블" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/round_layout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center">
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="사운드"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+            <Spinner
+                android:id="@+id/sound_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/round_layout"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:textColor="@color/black"
+                android:textSize="12dp"
+                android:text="다시 알림"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"/>
+            <ToggleButton
+                android:layout_width="36dp"
+                android:layout_height="36dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

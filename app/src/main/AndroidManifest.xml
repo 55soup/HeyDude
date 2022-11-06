@@ -28,12 +28,7 @@
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.loginRegister.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
         <activity
             android:name="com.mirim.hey_dude.Fragment4"
             android:exported="false" />
@@ -51,8 +46,13 @@
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.NavBar"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
+            android:exported="true"
+            tools:ignore="DuplicateActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
