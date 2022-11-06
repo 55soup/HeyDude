@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import com.example.hey_dude.R
+import android.content.Intent
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,7 +44,8 @@ class Fragment4 : Fragment() {
         val btnSet = view.findViewById<ImageButton>(R.id.btnSet)
 
         btnSet.setOnClickListener {
-                Log.d("mytag","btnSet 클릭")
+//            val intent = Intent(this, SettingActivity::class.java)  // 인텐트를 생성해줌,
+//            startActivity(intent)  // 화면 전환을 시켜줌
         }
 
         return view
