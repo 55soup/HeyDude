@@ -44,8 +44,8 @@ class Fragment4 : Fragment() {
         val btnSet = view.findViewById<ImageButton>(R.id.btnSet)
 
         btnSet.setOnClickListener {
-//            val intent = Intent(this, SettingActivity::class.java)  // 인텐트를 생성해줌,
-//            startActivity(intent)  // 화면 전환을 시켜줌
+            val intent = Intent(this.context, SettingActivity::class.java)  // 인텐트를 생성해줌,
+            startActivity(intent)  // 화면 전환을 시켜줌
         }
 
         return view

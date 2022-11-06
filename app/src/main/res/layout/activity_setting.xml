@@ -4,7 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.mirim.hey_dude.SettingActivity">
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#00000000" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSet"
         android:layout_width="match_parent"
