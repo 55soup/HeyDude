@@ -1,11 +1,11 @@
-package com.mirim.hey_dude;
+package com.mirim.hey_dude.friendRecyclerView;
 
 public class FriendItem {
     String name;
     String today;
     String resourceId;
 
-    public FriendItem() {
+    public FriendItem(String name, String today, String resourceId) {
         this.name = name;
         this.today = today;
         this.resourceId = resourceId;

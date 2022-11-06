@@ -1,4 +1,4 @@
-package com.mirim.hey_dude;
+package com.mirim.hey_dude.friendRecyclerView;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -46,7 +46,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.item_recyclerview, parent, false);
+        View view = inflater.inflate(R.layout.item_friends_recyclerview, parent, false);
         MyRecyclerAdapter.ViewHolder vh = new MyRecyclerAdapter.ViewHolder(view);
         return vh;
     }
