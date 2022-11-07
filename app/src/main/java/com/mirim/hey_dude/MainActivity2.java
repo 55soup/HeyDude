@@ -57,9 +57,10 @@ public class MainActivity2 extends AppCompatActivity {
         
         // item 추가
         for (int i = 0; i < 20; i++) {
-            mFriendList.add(new FriendItem("우우우", "우우웅", "R.drawable.ic_baseline_add_24"));
+            mFriendList.add(new FriendItem("선주", "우우웅", "R.drawable.ic_baseline_add_24"));
         }
-        mFriendList.add(new FriendItem("에엥", "엉", "R.drawable.ic_baseline_add_24"));
+        mFriendList.add(new FriendItem("하진", "엉", "R.drawable.ic_baseline_add_24"));
+        mFriendList.add(new FriendItem("전진", "엉", "R.drawable.ic_baseline_add_24"));
 
         myRecyclerAdapter = new MyRecyclerAdapter(mFriendList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

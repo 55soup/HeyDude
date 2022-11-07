@@ -13,10 +13,57 @@
         android:src="@drawable/arrow_left"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:background="#00000000" />
+        android:background="#00000000"
+        android:layout_marginBottom="60dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerSet"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp">
+        <TableRow
+            android:layout_marginBottom="15dp">
+            <ImageView
+                android:src="@drawable/ic_baseline_megaphone_24"
+                android:layout_marginRight="14dp"/>
+            <TextView
+                android:text="공지"
+                android:textColor="@color/black"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="15dp">
+            <ImageView
+                android:src="@drawable/ic_baseline_helpinfo_24"
+                android:layout_marginRight="14dp"/>
+            <TextView
+                android:text="자주 묻는 질문"
+                android:textColor="@color/black"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="15dp">
+            <ImageView
+                android:src="@drawable/ic_baseline_message_24"
+                android:layout_marginRight="14dp"/>
+            <TextView
+                android:text="의견 보내기"
+                android:textColor="@color/black"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="15dp">
+            <ImageView
+                android:src="@drawable/ic_baseline_star_24"
+                android:layout_marginRight="14dp"/>
+            <TextView
+                android:text="별점 남기기"
+                android:textColor="@color/black"/>
+        </TableRow>
+        <TableRow
+            android:layout_marginBottom="15dp">
+            <ImageView
+                android:src="@drawable/ic_baseline_info_24"
+                android:layout_marginRight="14dp"/>
+            <TextView
+                android:text="서비스 정보"
+                android:textColor="@color/black"/>
+        </TableRow>
+    </TableLayout>
 </LinearLayout>
