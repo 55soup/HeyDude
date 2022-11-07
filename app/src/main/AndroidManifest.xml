@@ -27,7 +27,7 @@
             android:name="com.mirim.hey_dude.SetAlarmActivity"
             android:exported="false" />
         <activity
-            android:name="com.mirim.hey_dude.NavBar"
+            android:name="com.mirim.hey_dude.MainActivity2"
             android:exported="true"
             tools:ignore="Instantiatable">
             <intent-filter>
@@ -35,6 +35,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.mirim.hey_dude.NavBar"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
         <activity
             android:name="com.mirim.hey_dude.Fragment4"
             android:exported="false"
@@ -51,9 +55,6 @@
             android:name="com.mirim.hey_dude.Fragment1"
             android:exported="false"
             tools:ignore="Instantiatable" />
-        <activity
-            android:name="com.mirim.hey_dude.MainActivity2"
-            android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.loginRegister.LoginActivity"
             android:exported="false"
