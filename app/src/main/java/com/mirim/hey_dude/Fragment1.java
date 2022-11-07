@@ -43,8 +43,6 @@ public class Fragment1 extends Fragment {
         View v = inflater.inflate(R.layout.activity_fragment1, container, false);
         timepicker =(TimePicker) v.findViewById(R.id.timepicker);
 
-
-
         return v; // 반드시 추가
 //        return inflater.inflate(R.layout.activity_fragment3, container, false);
 

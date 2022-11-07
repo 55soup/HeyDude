@@ -1,48 +1,60 @@
 package com.mirim.hey_dude;
 
-import android.annotation.SuppressLint;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.MenuItem;
-import android.widget.AbsListView;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.core.view.ViewCompat;
-import androidx.core.widget.NestedScrollView;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.annotation.RequiresApi;
+import androidx.core.view.KeyEventDispatcher;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
 import com.example.hey_dude.R;
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.bottomnavigation.LabelVisibilityMode;
-import com.google.android.material.navigation.NavigationBarView;
 import com.mirim.hey_dude.friendRecyclerView.FriendItem;
 import com.mirim.hey_dude.friendRecyclerView.MyRecyclerAdapter;
 
+import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.List;
 
-public class MainActivity2 extends AppCompatActivity {
+
+public class Fragment3 extends Fragment {
     EditText edit_search;
     RecyclerView mRecyclerView;
     private ArrayList<FriendItem> mFriendList;
     private MyRecyclerAdapter myRecyclerAdapter;
 
+    public Fragment3() {
+        // Required empty public constructor
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.activity_fragment3, container, false);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        mRecyclerView = findViewById(R.id.recyclerView);
-        edit_search = findViewById(R.id.edit_search);
+        mRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
+        edit_search = (EditText) v.findViewById(R.id.edit_search);
         edit_search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -61,7 +73,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         mFriendList = new ArrayList<>();
 
         // item 추가
@@ -72,20 +84,21 @@ public class MainActivity2 extends AppCompatActivity {
         mFriendList.add(new FriendItem("전진", "엉", "R.drawable.ic_baseline_add_24"));
 
         myRecyclerAdapter = new MyRecyclerAdapter(mFriendList);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         mRecyclerView.setAdapter(myRecyclerAdapter);
 
+        return v; // 반드시 추가
     }
-    private void filter(String text){
+
+    private void filter(String text) {
         ArrayList<FriendItem> filteredList = new ArrayList<>();
 
-        for(FriendItem item : mFriendList){
-            if(item.getName().toLowerCase().contains(text.toLowerCase())){
+        for (FriendItem item : mFriendList) {
+            if (item.getName().toLowerCase().contains(text.toLowerCase())) {
                 filteredList.add(item);
             }
-            // 유저가 없을 때는 어떻게?
+            // 찾는 유저가 없을 때는 어떻게?
         }
         myRecyclerAdapter.filterList(filteredList);
     }
-
 }

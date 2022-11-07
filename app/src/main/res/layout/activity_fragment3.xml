@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.mirim.hey_dude.Fragment3">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-   <androidx.recyclerview.widget.RecyclerView
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools"
        android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
-</LinearLayout>
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:padding="10dp">
+      <EditText
+          android:id="@+id/edit_search"
+          android:layout_width="match_parent"
+          android:layout_height="80dp"
+          android:drawableLeft="@drawable/ic_baseline_search_24"
+          android:padding="10dp"
+          android:drawablePadding="12dp"
+          android:layout_marginBottom="40dp"
+          android:hint="친구를 찾아보세요!"
+          android:gravity="center_vertical"
+          android:background="@drawable/login_edittext"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="친구목록"
+          android:layout_marginBottom="16dp"/>
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recyclerView"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:nestedScrollingEnabled="false"
+          android:overScrollMode="never"/>
+   </LinearLayout>
+</androidx.core.widget.NestedScrollView>
