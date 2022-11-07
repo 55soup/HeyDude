@@ -2,8 +2,11 @@ package com.mirim.hey_dude;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.widget.AbsListView;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -26,9 +29,10 @@ import com.mirim.hey_dude.friendRecyclerView.FriendItem;
 import com.mirim.hey_dude.friendRecyclerView.MyRecyclerAdapter;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity2 extends AppCompatActivity {
-    SearchView search_view;
+    EditText edit_search;
     RecyclerView mRecyclerView;
     private ArrayList<FriendItem> mFriendList;
     private MyRecyclerAdapter myRecyclerAdapter;
@@ -38,23 +42,28 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         mRecyclerView = findViewById(R.id.recyclerView);
-        search_view = findViewById(R.id.search_view);
-        search_view.clearFocus();
-        search_view.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        edit_search = findViewById(R.id.edit_search);
+        edit_search.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
             }
         });
+
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mFriendList = new ArrayList<>();
-        
+
         // item 추가
         for (int i = 0; i < 20; i++) {
             mFriendList.add(new FriendItem("선주", "우우웅", "R.drawable.ic_baseline_add_24"));
@@ -67,6 +76,15 @@ public class MainActivity2 extends AppCompatActivity {
         mRecyclerView.setAdapter(myRecyclerAdapter);
 
     }
-   
+    private void filter(String text){
+        ArrayList<FriendItem> filteredList = new ArrayList<>();
+
+        for(FriendItem item : mFriendList){
+            if(item.getName().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+        myRecyclerAdapter.filterList(filteredList);
+    }
 
 }

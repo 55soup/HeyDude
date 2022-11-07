@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,7 +16,13 @@ import com.example.hey_dude.R;
 
 import java.util.ArrayList;
 
-public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
+public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> implements Filterable {
+
+    @Override
+    public Filter getFilter() {
+        return null;
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView profile;
         TextView name;
@@ -66,4 +74,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         return mFriendList.size();
     }
 
+    public void filterList(ArrayList<FriendItem> filteredList){
+        mFriendList = filteredList;
+        notifyDataSetChanged();
+    }
 }

@@ -34,4 +34,5 @@ public class FriendItem {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
+
 }
