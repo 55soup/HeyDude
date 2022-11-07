@@ -36,10 +36,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mirim.hey_dude.MainActivity2"
-            android:exported="false"
-            tools:ignore="Instantiatable" />
-        <activity
             android:name="com.mirim.hey_dude.Fragment4"
             android:exported="false"
             tools:ignore="Instantiatable" />

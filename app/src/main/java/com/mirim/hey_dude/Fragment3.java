@@ -28,6 +28,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.hey_dude.R;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.mirim.hey_dude.friendRecyclerView.FriendItem;
 import com.mirim.hey_dude.friendRecyclerView.MyRecyclerAdapter;
 
@@ -39,6 +40,7 @@ import java.util.List;
 public class Fragment3 extends Fragment {
     EditText edit_search;
     RecyclerView mRecyclerView;
+    ExtendedFloatingActionButton floatBtnModify;
     private ArrayList<FriendItem> mFriendList;
     private MyRecyclerAdapter myRecyclerAdapter;
 
@@ -55,6 +57,8 @@ public class Fragment3 extends Fragment {
         super.onCreate(savedInstanceState);
         mRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
         edit_search = (EditText) v.findViewById(R.id.edit_search);
+        floatBtnModify = (ExtendedFloatingActionButton) v.findViewById(R.id.floatBtnModify);
+
         edit_search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
