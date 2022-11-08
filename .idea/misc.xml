@@ -33,10 +33,19 @@
         <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main2.xml" value="0.36614583333333334" />
         <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/item_recyclerview.xml" value="0.45849802371541504" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/edittext_shadow.xml" value="0.1585" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/radius_colored.xml" value="0.1585" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/round_layout.xml" value="0.1585" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/selector_switch.xml" value="0.214" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/shape_switch_thumb.xml" value="0.1585" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/shape_switch_track_off.xml" value="0.2035" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/shape_switch_track_on.xml" value="0.2035" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_all_user.xml" value="0.20625" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_fragment1.xml" value="0.1634963768115942" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_fragment4.xml" value="0.1609375" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_login.xml" value="0.134375" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_set_alarm.xml" value="0.17300724637681159" />
       </map>
     </option>
   </component>
