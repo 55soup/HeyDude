@@ -6,19 +6,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
+    android:gravity="center"
     tools:context="com.mirim.hey_dude.Fragment2">
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <Button
-        android:id="@+id/btn_record"
+        android:id="@+id/StartRecording"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="녹음하기" />
     <Button
-        android:id="@+id/btn_stop"
+        android:id="@+id/StopRecording"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="멈추기" />
+    <Button
+        android:id="@+id/StartPlaying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="재생하기" />
+    <Button
+        android:id="@+id/StopPlaying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="재생멈추기" />
 </LinearLayout>

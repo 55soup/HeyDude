@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp"
-    android:background="@drawable/radius">
+    app:cardCornerRadius="5dp"
+    android:background="@drawable/radius"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="4dp"
+    app:contentPadding="10dp">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="2" android:rowCount="3" >
         <ImageView
-            android:id="@+id/profile"
             android:src="@drawable/ic_baseline_mic_none_24"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -32,10 +35,4 @@
             android:layout_columnSpan="2"
             android:layout_gravity="right" />
     </GridLayout>
-    <View
-        android:id="@+id/shadow"
-        android:layout_width="fill_parent"
-        android:layout_height="3dp"
-        android:background="@drawable/shadow_item">
-    </View>
-</LinearLayout>
+</androidx.cardview.widget.CardView>
