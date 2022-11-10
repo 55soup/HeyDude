@@ -76,6 +76,7 @@ public class Fragment3 extends Fragment {
             }
         });
 
+        // recyclerView
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         mFriendList = new ArrayList<>();

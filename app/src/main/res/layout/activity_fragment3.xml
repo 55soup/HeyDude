@@ -13,16 +13,18 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              android:padding="10dp">
+              android:padding="10dp"
+              android:layout_marginBottom="50dp">
              <EditText
                  android:id="@+id/edit_search"
                  android:layout_width="match_parent"
-                 android:layout_height="80dp"
+                 android:layout_height="70dp"
                  android:drawableLeft="@drawable/ic_baseline_search_24"
                  android:padding="10dp"
                  android:drawablePadding="12dp"
                  android:layout_marginBottom="40dp"
                  android:hint="친구를 찾아보세요!"
+                 android:textSize="12sp"
                  android:gravity="center_vertical"
                  android:background="@drawable/login_edittext"/>
              <TextView

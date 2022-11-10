@@ -19,17 +19,36 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_rowSpan="2"/>
-        <TextView
-            android:id="@+id/txt_alarm_time"
-            android:text="뀨뀨"
-            android:layout_marginLeft="18dp"/>
-        <TextView
-            android:id="@+id/txt_ment"
-            android:text="오늘도 귀여운 하루입니다"
-            android:layout_marginLeft="18dp"/>
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/txtAlarmTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:30"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="에 일어나야하는"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/txtFriendUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="하진"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="님을 위한 특별한 모닝콜을 선사해주세요!"/>
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/txt_mess_time"
+            android:id="@+id/txtMessTime"
             android:text="10분 전"
             android:textSize="8sp"
             android:layout_columnSpan="2"

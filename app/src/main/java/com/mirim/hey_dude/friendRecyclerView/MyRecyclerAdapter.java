@@ -18,12 +18,14 @@ import java.util.ArrayList;
 
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> implements Filterable {
 
+    private ArrayList<FriendItem> mFriendList = null;
+
     @Override
     public Filter getFilter() {
         return null;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView profile;
         TextView name;
         TextView today;
@@ -43,7 +45,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         }
     }
 
-    private ArrayList<FriendItem> mFriendList = null;
+
 
     public MyRecyclerAdapter(ArrayList<FriendItem> mFriendList) {
         this.mFriendList = mFriendList;
