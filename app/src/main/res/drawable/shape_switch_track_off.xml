@@ -4,8 +4,8 @@
     <corners
         android:radius="30dp"/>
     <size
-        android:width="36dp"
-        android:height="22dp" />
+        android:width="44dp"
+        android:height="26dp" />
 
     <solid
         android:color="#C2C2C2"/>
