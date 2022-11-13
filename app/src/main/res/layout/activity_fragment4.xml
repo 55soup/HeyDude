@@ -33,10 +33,12 @@
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnModify"
                 app:fabCustomSize="27dp"
+                app:maxImageSize="13dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_create_15"
                 android:backgroundTint="@color/white"
+                app:borderWidth="0dp"
+                android:src="@drawable/ic_baseline_modify_24"
                 android:layout_gravity="right|bottom"/>
         </FrameLayout>
     </FrameLayout>
