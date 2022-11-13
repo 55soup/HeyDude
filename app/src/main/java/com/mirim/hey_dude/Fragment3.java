@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import com.example.hey_dude.R;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mirim.hey_dude.friendRecyclerView.FriendItem;
 import com.mirim.hey_dude.friendRecyclerView.MyRecyclerAdapter;
 
@@ -40,7 +41,7 @@ import java.util.List;
 public class Fragment3 extends Fragment {
     EditText edit_search;
     RecyclerView mRecyclerView;
-    ExtendedFloatingActionButton floatBtnModify;
+    FloatingActionButton floatBtnModify;
     private ArrayList<FriendItem> mFriendList;
     private MyRecyclerAdapter myRecyclerAdapter;
 
@@ -57,7 +58,7 @@ public class Fragment3 extends Fragment {
         super.onCreate(savedInstanceState);
         mRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
         edit_search = (EditText) v.findViewById(R.id.edit_search);
-        floatBtnModify = (ExtendedFloatingActionButton) v.findViewById(R.id.floatBtnModify);
+        floatBtnModify = (FloatingActionButton) v.findViewById(R.id.floatBtnModify);
 
         edit_search.addTextChangedListener(new TextWatcher() {
             @Override
@@ -91,6 +92,14 @@ public class Fragment3 extends Fragment {
         myRecyclerAdapter = new MyRecyclerAdapter(mFriendList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         mRecyclerView.setAdapter(myRecyclerAdapter);
+
+        // flotingBtn
+        floatBtnModify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+            }
+        });
 
         return v; // 반드시 추가
     }
