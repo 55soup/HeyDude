@@ -11,5 +11,5 @@
         android:id="@+id/Alarm_RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="600dp"
-        tools:listitem="@layout/item_alarm_recyclerview"/>
+        tools:listitem="@layout/item_alarm_recyclerview" />
 </FrameLayout>
