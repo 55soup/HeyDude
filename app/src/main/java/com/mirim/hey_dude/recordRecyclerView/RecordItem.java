@@ -1,4 +1,4 @@
-package com.mirim.hey_dude;
+package com.mirim.hey_dude.recordRecyclerView;
 
 public class RecordItem {
     String alarmTime;

@@ -1,19 +1,15 @@
-package com.mirim.hey_dude;
+package com.mirim.hey_dude.recordRecyclerView;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hey_dude.R;
-import com.mirim.hey_dude.friendRecyclerView.FriendItem;
-import com.mirim.hey_dude.friendRecyclerView.MyRecyclerAdapter;
 
 import java.util.ArrayList;
 
@@ -21,10 +17,23 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
 
     private ArrayList<RecordItem> mRecordList = null;
 
+    ///////////////////////////// onclick event
+    public interface OnItemClickEventListener {
+        void onItemClick(View a_view, int a_position);
+    }
+
+    private OnItemClickEventListener mItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickEventListener a_listener) {
+        mItemClickListener = a_listener;
+    }
+    ///////////////////////////// onclick event
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView alarmTime;
         TextView friendUserName;
         TextView pushAlarmTime;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,7 +72,6 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
         this.mRecordList = list;
         notifyDataSetChanged();
     }
-
 
     @Override
     public int getItemCount() {
