@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Hey_dude"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.mirim.hey_dude.GoogleLoginActivity"
+            android:exported="false" />
+        <activity
             android:name="com.mirim.hey_dude.RecordActivity"
             android:exported="false" />
         <activity
@@ -30,7 +33,8 @@
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.SetAlarmActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName="com.mirim.hey_dude.NavBar" />
         <activity
             android:name="com.mirim.hey_dude.NavBar"
             android:exported="true"

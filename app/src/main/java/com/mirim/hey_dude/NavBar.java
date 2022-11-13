@@ -1,6 +1,7 @@
 package com.mirim.hey_dude;
 
 import android.annotation.SuppressLint;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -68,9 +69,10 @@ public class NavBar extends AppCompatActivity {
         fab_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //액티비티 이동 시 화면 전환 애니메이션
                 Intent intent = new Intent(NavBar.this , SetAlarmActivity.class);
                 startActivity(intent);
-                //액티비티 이동 시 화면 전환 애니메이션
+
                 overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
             }
         });

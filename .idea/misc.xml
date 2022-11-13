@@ -38,9 +38,15 @@
         <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main2.xml" value="0.36614583333333334" />
         <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/item_recyclerview.xml" value="0.45849802371541504" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_all_user.xml" value="0.20625" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_fragment2.xml" value="0.14375" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_fragment3.xml" value="0.14375" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_fragment4.xml" value="0.1609375" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_google_login.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_login.xml" value="0.134375" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_set_alarm.xml" value="0.1634963768115942" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/alarm_recyclerview_custom.xml" value="0.6563636363636364" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/item_friends_recyclerview.xml" value="0.4" />
       </map>
     </option>
   </component>
