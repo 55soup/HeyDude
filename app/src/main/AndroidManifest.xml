@@ -32,7 +32,7 @@
             android:name="com.mirim.hey_dude.SettingActivity"
             android:exported="false" />
         <activity
-            android:name="com.mirim.hey_dude.SetAlarmActivity"
+            android:name="com.mirim.hey_dude.alarm.SetAlarmActivity"
             android:exported="false"
             android:parentActivityName="com.mirim.hey_dude.NavBar" />
         <activity
@@ -58,7 +58,7 @@
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name="com.mirim.hey_dude.Fragment1"
+            android:name="com.mirim.hey_dude.alarm.Fragment1"
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity

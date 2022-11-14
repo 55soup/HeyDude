@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mirim.hey_dude.SetAlarmActivity">
+    tools:context="com.mirim.hey_dude.alarm.SetAlarmActivity">
     <LinearLayout
         android:layout_marginTop="10dp"
         android:id="@+id/topBar"
@@ -81,7 +81,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="사운드"
+                android:text="누구의 목소리가 듣고싶은가요?"
                 android:textColor="@color/black"
                 android:textSize="12dp" />
             <Spinner
