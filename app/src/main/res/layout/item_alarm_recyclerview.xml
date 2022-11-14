@@ -16,6 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/alarm_icon"
             android:src="@drawable/alarm_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,6 +36,7 @@
                 android:paddingTop="14dp"
                 android:textStyle="bold"/>
             <TextView
+                android:id="@+id/alarm_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="알람 레이블"

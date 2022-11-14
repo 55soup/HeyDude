@@ -11,6 +11,11 @@ import androidx.fragment.app.Fragment
 import com.example.hey_dude.R
 
 class Fragment1 : Fragment() {
+<<<<<<< HEAD
+=======
+    lateinit var alarmAdapter : AlarmAdapter
+    val datas = mutableListOf<AlarmData>()
+>>>>>>> 701a5b0 (알람 RecyclerView Adapter)
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     override fun onCreateView(
@@ -24,7 +29,24 @@ class Fragment1 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+<<<<<<< HEAD
     }
 
 
+=======
+        initRecycler()
+    }
+    private fun initRecycler() {
+        alarmAdapter = AlarmAdapter(this)
+//        alarm.adapter = alarmAdapter
+
+        datas.apply {
+            add(AlarmData(img = R.drawable.alarm_icon, time = "9:30 AM", label = "졸업식"))
+            add(AlarmData(img = R.drawable.alarm_icon, time = "9:30 AM", label = "졸업식"))
+
+            alarmAdapter.datas = datas
+            alarmAdapter.notifyDataSetChanged()
+        }
+    }
+>>>>>>> 701a5b0 (알람 RecyclerView Adapter)
 }

@@ -36,35 +36,20 @@
         <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/activity_main2.xml" value="0.36614583333333334" />
         <entry key="..\:/Android_Projects/Projects/hey_dude/app/src/main/res/layout/item_recyclerview.xml" value="0.45849802371541504" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/circle.xml" value="0.1565" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/edittext_shadow.xml" value="0.1565" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/find_password_radius.xml" value="0.1565" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/floatbtn_gradient.xml" value="0.1565" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/login_btn_round.xml" value="0.1565" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/playbutton.xml" value="0.1565" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/radius.xml" value="0.1565" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/selector_switch.xml" value="0.1875" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/shape_switch_thumb.xml" value="0.171" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/shape_switch_track_off.xml" value="0.171" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/drawable/shape_switch_track_on.xml" value="0.171" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_all_user.xml" value="0.20625" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_fragment1.xml" value="0.15942028985507245" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_fragment2.xml" value="0.14375" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_fragment3.xml" value="0.14375" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_fragment4.xml" value="0.1609375" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_google_login.xml" value="0.264" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_google_login2.xml" value="0.14739583333333334" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_google_login_acitivity.xml" value="0.1" />
+        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_google_login.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_login.xml" value="0.134375" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_login2.xml" value="0.1" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_set_alarm.xml" value="0.1634963768115942" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/activity_user_profile.xml" value="0.12454710144927536" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/alarm_recyclerview_custom.xml" value="0.5044910179640718" />
         <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/item_friends_recyclerview.xml" value="0.4" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/sign_up_activity.xml" value="0.11550151975683891" />
-        <entry key="..\:/Users/hjhaj/HeyDude/app/src/main/res/layout/user_info_activity.xml" value="0.1" />
       </map>
     </option>
   </component>

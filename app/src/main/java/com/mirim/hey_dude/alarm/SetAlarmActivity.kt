@@ -1,4 +1,4 @@
-package com.mirim.hey_dude.alarm
+package com.mirim.hey_dude
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,6 @@ import com.example.hey_dude.R
 
 //알람 설정 페이지
 class SetAlarmActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,10 +17,7 @@ class SetAlarmActivity : AppCompatActivity() {
 
         //닫기 버튼을 누르면 다시
         val cancelBtn = findViewById<Button>(R.id.cancel_btn)
-        val saveBtn = findViewById<Button>(R.id.save_btn)
-        saveBtn.setOnClickListener {
-            onBackPressed()
-        }
+
         setContentView(R.layout.activity_set_alarm)
     }
 
