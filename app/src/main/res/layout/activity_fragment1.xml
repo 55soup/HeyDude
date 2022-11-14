@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.mirim.hey_dude.Fragment1">
+    tools:context="com.mirim.hey_dude.alarm.Fragment1">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Alarm_RecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/"/>
+        android:layout_height="600dp"
+        tools:listitem="@layout/item_alarm_recyclerview" />
 </FrameLayout>
