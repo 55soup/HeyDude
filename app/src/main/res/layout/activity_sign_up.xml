@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mirim.hey_dude.Login.SignUpActivity">
+    <!--회원가입 페이지-->
+    <TextView
+        android:text="Sign Up"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!-- 이메일 입력창 -->
+    <EditText
+        android:id="@+id/email"
+        android:hint="Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!-- 비밀번호 입력창 -->
+    <EditText
+        android:id="@+id/password"
+        android:text="q1w2e3r"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="Nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!-- 별명 입력창 -->
+    <EditText
+        android:id="@+id/nickname"
+        android:hint="Nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/sign_up"
+        android:text="Sign Up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/cancel"
+        android:text="Cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

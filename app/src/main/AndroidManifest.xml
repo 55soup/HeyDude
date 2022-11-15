@@ -17,7 +17,13 @@
         android:theme="@style/Theme.Hey_dude"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.mirim.hey_dude.GoogleLoginActivity"
+            android:name="com.mirim.hey_dude.Login.UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.mirim.hey_dude.NavBar"
+            android:exported="false" />
+        <activity
+            android:name="com.mirim.hey_dude.Login.SignUpActivity"
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.RecordActivity"
@@ -32,11 +38,11 @@
             android:name="com.mirim.hey_dude.SettingActivity"
             android:exported="false" />
         <activity
-            android:name="com.mirim.hey_dude.SetAlarmActivity"
+            android:name="com.mirim.hey_dude.alarm.SetAlarmActivity"
             android:exported="false"
             android:parentActivityName="com.mirim.hey_dude.NavBar" />
         <activity
-            android:name="com.mirim.hey_dude.NavBar"
+            android:name="com.mirim.hey_dude.Login.GoogleLoginActivity"
             android:exported="true"
             tools:ignore="Instantiatable">
             <intent-filter>
@@ -62,7 +68,7 @@
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name="com.mirim.hey_dude.loginRegister.LoginActivity"
+            android:name="com.mirim.hey_dude.loginRegister.NJLoginActivity"
             android:exported="false"
             tools:ignore="DuplicateActivity" />
     </application>

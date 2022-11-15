@@ -13,7 +13,7 @@ import com.mirim.hey_dude.RetroInterface
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginActivity : AppCompatActivity() {
+class NJLoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     val api = RetroInterface.create()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
                     val user_uid = response.body()?.UID ?: return
                     if(user_uid != -1) {
                         Toast.makeText(applicationContext, "로그인 성공", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this@LoginActivity, NavBar::class.java)
+                        val intent = Intent(this@NJLoginActivity, NavBar::class.java)
                         intent.putExtra("id", binding.loginID.text.toString())
                         startActivity(intent)
 
