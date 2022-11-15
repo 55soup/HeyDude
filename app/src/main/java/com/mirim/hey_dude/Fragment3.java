@@ -41,7 +41,7 @@ import java.util.List;
 public class Fragment3 extends Fragment {
     EditText edit_search;
     RecyclerView mRecyclerView;
-    FloatingActionButton floatBtnModify;
+    FloatingActionButton floatBtnAdd;
     private ArrayList<FriendItem> mFriendList;
     private MyRecyclerAdapter myRecyclerAdapter;
 
@@ -58,7 +58,7 @@ public class Fragment3 extends Fragment {
         super.onCreate(savedInstanceState);
         mRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
         edit_search = (EditText) v.findViewById(R.id.edit_search);
-        floatBtnModify = (FloatingActionButton) v.findViewById(R.id.floatBtnModify);
+        floatBtnAdd = (FloatingActionButton) v.findViewById(R.id.floatBtnAdd);
 
         edit_search.addTextChangedListener(new TextWatcher() {
             @Override
@@ -94,7 +94,7 @@ public class Fragment3 extends Fragment {
         mRecyclerView.setAdapter(myRecyclerAdapter);
 
         // flotingBtn
-        floatBtnModify.setOnClickListener(new View.OnClickListener() {
+        floatBtnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
