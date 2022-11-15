@@ -1,4 +1,4 @@
-package com.mirim.hey_dude.loginRegister
+package com.mirim.hey_dude.nodejsLogin
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

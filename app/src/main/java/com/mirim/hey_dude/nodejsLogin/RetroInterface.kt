@@ -2,7 +2,7 @@ package com.mirim.hey_dude
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.mirim.hey_dude.loginRegister.*
+import com.mirim.hey_dude.nodejsLogin.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -12,15 +12,20 @@ class SetAlarmActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setContentView(R.layout.activity_set_alarm)
         //다시 알람 토글 버튼 이벤트트
 //        val switch: SwitchCompat = findViewById(R.id.switchView)
 
         //닫기 버튼을 누르면 다시
         val cancelBtn = findViewById<Button>(R.id.cancel_btn)
+        cancelBtn.setOnClickListener {
+            onBackPressed()
+        }
         val saveBtn = findViewById<Button>(R.id.save_btn)
-        saveBtn
-        setContentView(R.layout.activity_set_alarm)
+
+
+
+
     }
 
     companion object {
@@ -28,6 +33,10 @@ class SetAlarmActivity : AppCompatActivity() {
             return Intent(context, SetAlarmActivity::class.java)
         }
     }
+
+//    void setTimePicker(){
+//
+//    }
 
     override fun onBackPressed() {
         super.onBackPressed()

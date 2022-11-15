@@ -23,10 +23,10 @@
             android:name="com.mirim.hey_dude.RecordActivity"
             android:exported="false" />
         <activity
-            android:name="com.mirim.hey_dude.loginRegister.AllUserActivity"
+            android:name="com.mirim.hey_dude.nodejsLogin.AllUserActivity"
             android:exported="false" />
         <activity
-            android:name="com.mirim.hey_dude.loginRegister.RegisterActivity"
+            android:name="com.mirim.hey_dude.nodejsLogin.RegisterActivity"
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.SettingActivity"
@@ -62,7 +62,7 @@
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name="com.mirim.hey_dude.loginRegister.LoginActivity"
+            android:name="com.mirim.hey_dude.nodejsLogin.LoginActivity"
             android:exported="false"
             tools:ignore="DuplicateActivity" />
     </application>

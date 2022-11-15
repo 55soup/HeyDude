@@ -1,4 +1,4 @@
-package com.mirim.hey_dude.loginRegister
+package com.mirim.hey_dude.nodejsLogin
 
 import java.io.Serializable
 
