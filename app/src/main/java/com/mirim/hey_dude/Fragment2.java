@@ -67,19 +67,18 @@ public class Fragment2 extends Fragment {
         recordRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recordRecyclerView.setAdapter(myRecordAdapter);
 
-        // recyclerview click event
-        myRecordAdapter.setOnItemClickListener(new RecordAdapter.OnItemClickEventListener() {
+        // ---------------------recyclerview click event ---------------------
+        myRecordAdapter.setOnItemClickListener(new RecordAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(View a_view, int a_position) {
-                Log.e("sdf", "sdf");
+            public void OnItemClicked(int position, String data) {
+                Toast.makeText(getActivity(),"Position: " + position + "Data: " + data, Toast.LENGTH_SHORT).show();
             }
         });
-        //////////////////// recyclerview
+        // ---------------------recyclerview click event ---------------------
+        //====================== recyclerview ======================
 
 
         //////////////////// recordView
-
-
         StopRecording.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
