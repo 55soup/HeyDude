@@ -27,6 +27,7 @@ public class NavBar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_bar);
+        getSupportActionBar().hide();
 
         fragment1 = new Fragment1();
         fragment2 = new Fragment2();

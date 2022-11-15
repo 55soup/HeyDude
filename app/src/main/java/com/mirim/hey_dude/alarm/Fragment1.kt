@@ -26,10 +26,10 @@ class Fragment1 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initRecycler()
+//        initRecycler()
     }
     private fun initRecycler() {
-        alarmAdapter = AlarmAdapter(this)
+//        alarmAdapter = AlarmAdapter(this)
 //        alarm.adapter = alarmAdapter
 
         datas.apply {

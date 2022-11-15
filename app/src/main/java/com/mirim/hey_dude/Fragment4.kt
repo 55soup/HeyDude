@@ -1,14 +1,13 @@
 package com.mirim.hey_dude
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.fragment.app.Fragment
 import com.example.hey_dude.R
-import android.content.Intent
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,6 +45,7 @@ class Fragment4 : Fragment() {
         btnSet.setOnClickListener {
             val intent = Intent(this.context, SettingActivity::class.java)  // 인텐트를 생성해줌,
             startActivity(intent)  // 화면 전환을 시켜줌
+//            overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
         }
 
         return view

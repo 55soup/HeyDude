@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,17 +18,18 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
 
     private ArrayList<RecordItem> mRecordList = null;
 
-    ///////////////////////////// onclick event
-    public interface OnItemClickEventListener {
-        void onItemClick(View a_view, int a_position);
+    // ---------------------click이벤트 구현을 위한 코드---------------------
+    public interface OnItemClickListener {
+        void OnItemClicked(int position, String data);
     }
+    //OnItemClickListener 참조 변수 선언
+    private OnItemClickListener itemClickListener;
 
-    private OnItemClickEventListener mItemClickListener;
-
-    public void setOnItemClickListener(OnItemClickEventListener a_listener) {
-        mItemClickListener = a_listener;
+    //OnItemClickListener 전달 메소드
+    public void setOnItemClickListener(OnItemClickListener listener){
+        itemClickListener = listener;
     }
-    ///////////////////////////// onclick event
+    // ---------------------click이벤트 구현을 위한 코드---------------------
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView alarmTime;
@@ -53,6 +55,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
         this.mRecordList = mRecordList;
     }
 
+
     @NonNull
     @Override
     public RecordAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -60,6 +63,20 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.item_record_recyclerview, parent, false);
         RecordAdapter.ViewHolder vh = new RecordAdapter.ViewHolder(view);
+
+        //---------------------onclick event ---------------------
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String data = "";
+                int position = vh.getAdapterPosition();
+                if(position != RecyclerView.NO_POSITION){
+                    data = vh.getItemId()+"";
+                }
+                itemClickListener.OnItemClicked(position, data);
+            }
+        });
+        //--------------------- onclick event ---------------------ㄴ
         return vh;
     }
 

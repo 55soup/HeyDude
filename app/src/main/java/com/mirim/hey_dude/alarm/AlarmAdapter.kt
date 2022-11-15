@@ -34,7 +34,7 @@ class AlarmAdapter(private val context: Context) :
         private val alarmLabel : TextView = itemView.findViewById(R.id.alarm_label)
 
         fun bind(item: AlarmData){
-            Glide.with(itemView).load(item.img).into(alarmIcon)
+//            Glide.with(itemView).load(item.img).into(alarmIcon)
             textTime.text = item.time
             alarmLabel.text = item.label
         }
