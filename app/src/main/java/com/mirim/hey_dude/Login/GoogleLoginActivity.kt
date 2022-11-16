@@ -6,19 +6,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import com.example.hey_dude.R
-import com.google.android.gms.auth.api.identity.BeginSignInRequest
-import com.google.android.gms.auth.api.identity.Identity
-import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 
 class GoogleLoginActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
@@ -28,7 +22,11 @@ class GoogleLoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_google_login)
         //회원가입
         findViewById<Button>(R.id.sign_up).setOnClickListener {
-            startActivity(Intent(this, SignUpActivity::class.java))
+            try {
+                startActivity(Intent(this, SignUpActivity::class.java))
+            } catch (e: Exception){
+                Log.d("mytag","${e.message}")
+            }
         }
         //구글 로그인 버튼 기능 구현
         findViewById<SignInButton>(R.id.google_login_btn).setOnClickListener {
@@ -49,10 +47,9 @@ class GoogleLoginActivity : AppCompatActivity() {
 //            startActivity(Intent(this, ForgotPasswordActivity::class.java))
 //        }
     }
-    fun userLoginFailed(e: Exception?){
-        val message = if(e == null) "로그인 실패" else "로그인 실패 ${e.message}"
-        Toast.makeText(this, "${message}", Toast.LENGTH_SHORT).show()
-        Log.d("mytag", "로그인 실패 : ${message}")
+    fun userLoginFailed(e: Exception){
+        Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
+        Log.d("mytag", "로그인 실패 : ${e.message}")
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -63,7 +60,6 @@ class GoogleLoginActivity : AppCompatActivity() {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
 
             try {
-                //TODO : 파이어베이스 인증 작업 시작!!
                 val account = task.getResult(ApiException::class.java)
                 val credential = GoogleAuthProvider.getCredential(account.idToken!!, null)
                 auth.signInWithCredential(credential)

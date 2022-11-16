@@ -83,7 +83,7 @@ class UserProfileActivity : AppCompatActivity() {
     fun logout() {
         auth.signOut()
         Toast.makeText(this, "로그아웃", Toast.LENGTH_SHORT).show()
-        startActivity(Intent(this, LoginActivity::class.java))
+        startActivity(Intent(this, GoogleLoginActivity::class.java))
         finish()
     }
 
@@ -100,7 +100,7 @@ class UserProfileActivity : AppCompatActivity() {
         // 이후 구글 계정도 로그아웃
         googleSignInClient.signOut().addOnCompleteListener {
             Toast.makeText(this, "로그아웃", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, GoogleLoginActivity::class.java))
             finish()
         }
     }

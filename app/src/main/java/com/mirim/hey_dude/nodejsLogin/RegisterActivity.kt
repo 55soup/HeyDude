@@ -1,11 +1,9 @@
-package com.mirim.hey_dude.loginRegister
+package com.mirim.hey_dude.nodejsLogin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import com.example.hey_dude.R
-import com.example.hey_dude.databinding.ActivityLoginBinding
 import com.example.hey_dude.databinding.ActivityRegisterBinding
 import com.mirim.hey_dude.RetroInterface
 import retrofit2.Call

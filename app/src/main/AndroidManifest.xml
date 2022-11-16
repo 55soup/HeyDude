@@ -17,22 +17,16 @@
         android:theme="@style/Theme.Hey_dude"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.mirim.hey_dude.Login.UserProfileActivity"
-            android:exported="false" />
-        <activity
             android:name="com.mirim.hey_dude.NavBar"
-            android:exported="false" />
-        <activity
-            android:name="com.mirim.hey_dude.Login.SignUpActivity"
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.RecordActivity"
             android:exported="false" />
         <activity
-            android:name="com.mirim.hey_dude.loginRegister.AllUserActivity"
+            android:name="com.mirim.hey_dude.nodejsLogin.AllUserActivity"
             android:exported="false" />
         <activity
-            android:name="com.mirim.hey_dude.loginRegister.RegisterActivity"
+            android:name="com.mirim.hey_dude.nodejsLogin.RegisterActivity"
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.SettingActivity"
@@ -41,6 +35,8 @@
             android:name="com.mirim.hey_dude.alarm.SetAlarmActivity"
             android:exported="false"
             android:parentActivityName="com.mirim.hey_dude.NavBar" />
+        <activity android:name="com.mirim.hey_dude.Login.SignUpActivity"
+            android:exported="false"/>
         <activity
             android:name="com.mirim.hey_dude.Login.GoogleLoginActivity"
             android:exported="true"
@@ -64,11 +60,11 @@
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name="com.mirim.hey_dude.Fragment1"
+            android:name="com.mirim.hey_dude.alarm.Fragment1"
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name="com.mirim.hey_dude.loginRegister.NJLoginActivity"
+            android:name="com.mirim.hey_dude.nodejsLogin.LoginNoejsActivity"
             android:exported="false"
             tools:ignore="DuplicateActivity" />
     </application>

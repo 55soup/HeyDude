@@ -44,6 +44,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     //구글 계정 로그인 관련 추가 의존성 설정
     implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    //데이터베이스
+    implementation 'com.google.firebase:firebase-database-ktx'
     //Retrofit2 예제
     implementation 'com.squareup.retrofit2:retrofit:2.6.1' //라이브러리 의존성 추가
     //역직렬화 작업을 위한 컨버터 라이브러리 추가

@@ -72,7 +72,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     fun userRegisterFailed(e: Exception?) {
-        val message = if(e == null) "계정 생성 실패" else "계정 생성 실패(${e.message})"
+        val message = if(e == null) "계정 생성 실패" else "${e.message}"
         Log.d("mytag", "계정 생성 실패 ${message}")
         Toast.makeText(this, "${message}", Toast.LENGTH_SHORT).show()
     }
