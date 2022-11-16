@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.mirim.hey_dude.alarm.Fragment1;
 import com.mirim.hey_dude.alarm.SetAlarmActivity;
-//push test
+
 public class NavBar extends AppCompatActivity {
     Fragment1 fragment1;
     Fragment2 fragment2;
@@ -27,7 +27,6 @@ public class NavBar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_bar);
-        getSupportActionBar().hide();
 
         fragment1 = new Fragment1();
         fragment2 = new Fragment2();

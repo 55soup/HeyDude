@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Hey_dude"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.mirim.hey_dude.Login.GoogleLoginActivity"
+            android:exported="false" />
+        <activity
             android:name="com.mirim.hey_dude.NavBar"
             android:exported="false" />
         <activity
@@ -35,8 +38,10 @@
             android:name="com.mirim.hey_dude.alarm.SetAlarmActivity"
             android:exported="false"
             android:parentActivityName="com.mirim.hey_dude.NavBar" />
+        <activity android:name="com.mirim.hey_dude.Login.SignUpActivity"
+            android:exported="false"/>
         <activity
-            android:name="com.mirim.hey_dude.GoogleLoginActivity"
+            android:name="com.mirim.hey_dude.EmailLogin"
             android:exported="true"
             tools:ignore="Instantiatable">
             <intent-filter>
@@ -62,7 +67,7 @@
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name="com.mirim.hey_dude.nodejsLogin.LoginActivity"
+            android:name="com.mirim.hey_dude.nodejsLogin.LoginNoejsActivity"
             android:exported="false"
             tools:ignore="DuplicateActivity" />
     </application>

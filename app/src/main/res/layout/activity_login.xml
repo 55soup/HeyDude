@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mirim.hey_dude.nodejsLogin.LoginActivity">
+    tools:context="com.mirim.hey_dude.EmailLogin">
 
     <TextView
         android:layout_width="match_parent"
@@ -29,15 +29,16 @@
         android:layout_gravity="center"/>
 
     <EditText
-        android:paddingLeft="10dp"
         android:id="@+id/loginPW"
+        android:paddingLeft="10dp"
         android:layout_width="320dp"
         android:layout_height="62dp"
         android:background="@drawable/login_edittext"
         android:hint="비밀번호"
         android:textSize="12dp"
         android:layout_marginTop="8dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/loginBtn"

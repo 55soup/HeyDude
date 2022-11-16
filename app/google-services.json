@@ -14,31 +14,22 @@
       },
       "oauth_client": [
         {
-          "client_id": "789290372757-r2ht43v6q93jdcbnl885n5v27uh0e1gv.apps.googleusercontent.com",
+          "client_id": "789290372757-h00au8ef4chhg2lnkphvum9f2ivohe10.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.mirim.hey_dude",
-            "certificate_hash": "de2a27759f410ccf7cc4b178b9a58e6dba209b68"
+            "certificate_hash": "9090c00a4004305b50d41d6ad93c714a157a4ac2"
           }
-        },
-        {
-          "client_id": "789290372757-vnc7d83oo53bcsvlvsr5689fd7vioi12.apps.googleusercontent.com",
-          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAdq_GF1eZYVGbOqF1BiAqD45N3XvdSEok"
+          "current_key": "AIzaSyAQAr_Ql20SBoO-ZI9USeMkBT38I-fLhTg"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "789290372757-vnc7d83oo53bcsvlvsr5689fd7vioi12.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
