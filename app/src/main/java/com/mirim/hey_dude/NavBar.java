@@ -22,6 +22,7 @@ public class NavBar extends AppCompatActivity {
     Fragment4 fragment4;
     BottomNavigationView bottomNavigationView;
     FloatingActionButton fab_btn;
+    // push test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
