@@ -1,4 +1,4 @@
-package com.mirim.hey_dude
+package com.mirim.hey_dude.alarm
 
 import androidx.annotation.RequiresApi
 import android.os.Build
@@ -6,17 +6,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.os.Bundle
 import android.view.View
-import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.example.hey_dude.R
-import com.mirim.hey_dude.alarm.AlarmAdapter
-import com.mirim.hey_dude.alarm.AlarmData
 
 class Fragment1 : Fragment() {
-
-    lateinit var alarmAdapter : AlarmAdapter
     val datas = mutableListOf<AlarmData>()
-
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     override fun onCreateView(
@@ -30,5 +24,7 @@ class Fragment1 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
+
 }
