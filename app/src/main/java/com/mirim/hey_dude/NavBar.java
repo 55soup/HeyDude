@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.mirim.hey_dude.alarm.Fragment1;
 import com.mirim.hey_dude.alarm.SetAlarmActivity;
-
+//push test
 public class NavBar extends AppCompatActivity {
     Fragment1 fragment1;
     Fragment2 fragment2;
@@ -22,7 +22,6 @@ public class NavBar extends AppCompatActivity {
     Fragment4 fragment4;
     BottomNavigationView bottomNavigationView;
     FloatingActionButton fab_btn;
-    // push test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
