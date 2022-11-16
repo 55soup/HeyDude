@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import com.example.hey_dude.R
 
 class Fragment1 : Fragment() {
-    val datas = mutableListOf<AlarmData>()
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     override fun onCreateView(
