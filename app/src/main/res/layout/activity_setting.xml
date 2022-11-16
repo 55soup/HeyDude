@@ -21,6 +21,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp">
         <TableRow
+            android:id="@+id/userLogout"
+            android:layout_marginBottom="15dp">
+            <ImageView
+                android:src="@drawable/ic_baseline_megaphone_24"
+                android:layout_marginRight="14dp"/>
+            <TextView
+                android:text="로그아웃"
+                android:textColor="@color/black"/>
+        </TableRow>
+        <TableRow
             android:layout_marginBottom="15dp">
             <ImageView
                 android:src="@drawable/ic_baseline_megaphone_24"

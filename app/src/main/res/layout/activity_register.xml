@@ -20,27 +20,28 @@
 
     <EditText
         android:id="@+id/inputName"
+        android:hint="닉네임"
+
         android:layout_width="320dp"
         android:layout_height="70dp"
         android:background="@drawable/login_edittext"
-        android:hint="닉네임"
         android:paddingLeft="10dp"
         android:textSize="12dp"
         android:layout_marginTop="40dp"
         android:layout_gravity="center"/>
     <EditText
-        android:paddingLeft="10dp"
         android:id="@+id/inputID"
-        android:layout_width="320dp"
-        android:layout_height="70dp"
-        android:background="@drawable/login_edittext"
         android:hint="아이디"
         android:textSize="12dp"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center"/>
-    <EditText
         android:paddingLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="70dp"
+        android:background="@drawable/login_edittext"/>
+    <EditText
         android:id="@+id/inputPW"
+        android:paddingLeft="10dp"
         android:layout_width="320dp"
         android:layout_height="70dp"
         android:background="@drawable/login_edittext"
