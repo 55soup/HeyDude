@@ -30,10 +30,9 @@ import com.mirim.hey_dude.recordRecyclerView.RecordItem;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
+// udpate
 public class Fragment2 extends Fragment {
     Button StopRecording;
-
     RecyclerView recordRecyclerView;
     private ArrayList<RecordItem> mRecordList;
     private RecordAdapter myRecordAdapter;
