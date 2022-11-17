@@ -48,19 +48,22 @@
         android:orientation="vertical"
         android:gravity="center">
         <TextView
+            android:id="@+id/txtNickName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="김하진"
+            android:text=""
             android:textSize="20dp"
             android:layout_marginTop="16dp"
             android:textColor="@color/black"/>
         <TextView
+            android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="w2128@e-mirim.hs.kr"
             android:textSize="10dp"
             android:layout_marginBottom="16dp"/>
         <TextView
+            android:id="@+id/txtMess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="나 좀 깨워주라 애들아~" />
