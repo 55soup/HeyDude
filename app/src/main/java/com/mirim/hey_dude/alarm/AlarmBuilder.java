@@ -11,7 +11,7 @@ public class AlarmBuilder {
         return this;
     }
 
-    public AlarmBuilder setHour(int hour) {
+    AlarmBuilder setHour(int hour) {
         alarm.setHour(hour);
         return this;
     }
