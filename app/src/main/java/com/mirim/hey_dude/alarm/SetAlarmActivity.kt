@@ -9,20 +9,19 @@ import com.example.hey_dude.R
 
 //알람 설정 페이지
 class SetAlarmActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_set_alarm)
 
         //다시 알람 토글 버튼 이벤트트
 //        val switch: SwitchCompat = findViewById(R.id.switchView)
 
         //닫기 버튼을 누르면 다시
         val cancelBtn = findViewById<Button>(R.id.cancel_btn)
-        val saveBtn = findViewById<Button>(R.id.save_btn)
-        saveBtn.setOnClickListener {
+        cancelBtn.setOnClickListener {
             onBackPressed()
         }
-        setContentView(R.layout.activity_set_alarm)
+
     }
 
     companion object {

@@ -1,4 +1,4 @@
-package com.mirim.hey_dude.alarm
+package com.mirim.hey_dude
 
 import androidx.annotation.RequiresApi
 import android.os.Build
