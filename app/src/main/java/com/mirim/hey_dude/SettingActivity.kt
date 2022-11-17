@@ -6,6 +6,7 @@ import android.widget.ImageButton
 import android.os.Bundle
 import android.view.View
 import android.widget.TableRow
+import androidx.activity.OnBackPressedCallback
 import com.example.hey_dude.R
 import com.google.android.gms.common.SignInButton
 import com.mirim.hey_dude.EmailLogin
@@ -20,6 +21,7 @@ class SettingActivity : AppCompatActivity() {
         findViewById<TableRow>(R.id.userLogout).setOnClickListener(View.OnClickListener {
             val e1 = EmailLogin()
             e1.userLogout()
+            finishAffinity() //쌓인 화면스택 제거
             val intent = Intent(this, EmailLogin::class.java)  // 인텐트를 생성해줌,
             startActivity(intent)  // 화면 전환을 시켜줌
         })
