@@ -22,14 +22,14 @@ public class AlarmBuilder {
     }
 
     public AlarmBuilder setLabel(String label) {
-        alarm.setTitle(label);
+        alarm.setLabel(label);
         return this;
     }
 
-    public AlarmBuilder setTotalFlag(boolean repeatFlag) {
-        alarm.setRepeatFlag(repeatFlag);
-        return this;
-    }
+//    public AlarmBuilder setRepeatFlag(boolean repeatFlag) {
+//        alarm.setRepeatFlag(repeatFlag);
+//        return this;
+//    }
 
     public Alarm build() { return this.alarm; }
 }

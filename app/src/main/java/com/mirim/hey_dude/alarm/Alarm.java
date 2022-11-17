@@ -40,19 +40,19 @@ public class Alarm implements Serializable {
         this.minute = minute;
     }
 
-    public String getTitle() {
+    public String getLabel() {
         return label;
     }
 
-    public void setTitle(String title) {
-        this.label = title;
+    public void setLabel(String label) {
+        this.label = label;
     }
 
-    public boolean isRepeatFlag() {
-        return repeatFlag;
-    }
-
-    public void setRepeatFlag(boolean repeatFlag) {
-        this.repeatFlag = repeatFlag;
-    }
+//    public boolean isRepeatFlag() {
+//        return repeatFlag;
+//    }
+//
+//    public void setRepeatFlag(boolean repeatFlag) {
+//        this.repeatFlag = repeatFlag;
+//    }
 }
