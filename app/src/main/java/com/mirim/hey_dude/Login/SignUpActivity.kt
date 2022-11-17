@@ -22,15 +22,18 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
         val emailEditText = findViewById<EditText>(R.id.email)
         val passwordEditText = findViewById<EditText>(R.id.password)
+        val passwordCheckEditText = findViewById<EditText>(R.id.password_check)
         val nicknameEditText = findViewById<EditText>(R.id.nickname)
         findViewById<Button>(R.id.sign_up).setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
+            val passwordCheckEditText = passwordCheckEditText.text.toString()
             val nickname = nicknameEditText.text.toString()
 
             // createUserWithEmailAndPassword 메서드 호출하여 생성할 계정 정보(이메일, 패스워드) 전달
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { // 해당 이메일, 패스워드를 이용하는 계정 생성 완료
+
                     if(it.isSuccessful) {
                         // 계정 생성 성공 이후 유저 정보에 접근 가능
                         val user = auth.currentUser!!
@@ -46,14 +49,14 @@ class SignUpActivity : AppCompatActivity() {
                             .setValue(mapOf("email" to email, "nickname" to
                                     nickname))
                             .addOnCompleteListener {
-// 데이터베이스에 계정 정보 등록 완료
+                                // 데이터베이스에 계정 정보 등록 완료
                                 if(it.isSuccessful) {
 // 등록한 이메일 주소로 인증 관련 이메일 보내기
                                     user.sendEmailVerification()
                                     Toast.makeText(SignUpActivity@this, "계정 생성 완료 (가입한 이메일의 인증 메일을 확인해주세요.)", Toast.LENGTH_LONG).show()
                                     finish()
                                 } else {
-// 예외가 발생한 경우 전달받은 Task 객체(it)의 exception 속성을 통해 예외 객체 참조 가능, 여기서는 모든 예외를 한 메서드에서 처리하도록 구현함
+                                  // 예외가 발생한 경우 전달받은 Task 객체(it)의 exception 속성을 통해 예외 객체 참조 가능, 여기서는 모든 예외를 한 메서드에서 처리하도록 구현함
                                     userRegisterFailed(it.exception)
                                 }
                             }.addOnFailureListener {
@@ -62,6 +65,7 @@ class SignUpActivity : AppCompatActivity() {
                     } else {
                         userRegisterFailed(it.exception)
                     }
+
                 }.addOnFailureListener {
                     userRegisterFailed(it)
                 }
