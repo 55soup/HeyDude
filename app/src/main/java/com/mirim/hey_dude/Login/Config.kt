@@ -8,5 +8,4 @@ class Config {
         val GOOGLE_SIGN_IN_WEB_CLIENT_ID = "789290372757-j2r5hjar7c4sh4imvcdtoca3ol9eu4km.apps.googleusercontent.com"
         val RC_SIGN_IN = 12345
     }
-
 }

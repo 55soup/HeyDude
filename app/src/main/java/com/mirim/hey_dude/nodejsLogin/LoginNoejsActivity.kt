@@ -13,7 +13,11 @@ import com.mirim.hey_dude.RetroInterface
 import retrofit2.Callback
 import retrofit2.Response
 
+<<<<<<<< HEAD:app/src/main/java/com/mirim/hey_dude/nodejsLogin/LoginActivity.kt
+class LoginActivity : AppCompatActivity() {
+========
 class LoginNoejsActivity : AppCompatActivity() {
+>>>>>>>> 048d800 (구글 이메일 인증 로그인 에러 수정):app/src/main/java/com/mirim/hey_dude/nodejsLogin/LoginNoejsActivity.kt
     private lateinit var binding: ActivityLoginBinding
     val api = RetroInterface.create()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +56,11 @@ class LoginNoejsActivity : AppCompatActivity() {
                     val user_uid = response.body()?.UID ?: return
                     if(user_uid != -1) {
                         Toast.makeText(applicationContext, "로그인 성공", Toast.LENGTH_SHORT).show()
+<<<<<<<< HEAD:app/src/main/java/com/mirim/hey_dude/nodejsLogin/LoginActivity.kt
+                        val intent = Intent(this@LoginActivity, NavBar::class.java)
+========
                         val intent = Intent(this@LoginNoejsActivity, NavBar::class.java)
+>>>>>>>> 048d800 (구글 이메일 인증 로그인 에러 수정):app/src/main/java/com/mirim/hey_dude/nodejsLogin/LoginNoejsActivity.kt
                         intent.putExtra("id", binding.loginID.text.toString())
                         startActivity(intent)
 
