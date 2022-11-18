@@ -21,15 +21,14 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         val emailEditText = findViewById<EditText>(R.id.email)
-        val passwordEditText = findViewById<EditText>(R.id.password)
-        val passwordCheckEditText = findViewById<EditText>(R.id.password_check)
+        val passwordEditText = findViewById<EditText>(R.id.inputPW)
+//        val passwordCheckEditText = findViewById<EditText>(R.id.password_check)
         val nicknameEditText = findViewById<EditText>(R.id.nickname)
-        findViewById<Button>(R.id.sign_up).setOnClickListener {
-            val email = emailEditText.text.toString()
-            val password = passwordEditText.text.toString()
-            val passwordCheckEditText = passwordCheckEditText.text.toString()
-            val nickname = nicknameEditText.text.toString()
-
+        findViewById<Button>(R.id.signUpBtn).setOnClickListener {
+        val email = emailEditText.text.toString()
+        val password = passwordEditText.text.toString()
+//            val passwordCheckEditText = passwordCheckEditText.text.toString()
+        val nickname = nicknameEditText.text.toString()
             // createUserWithEmailAndPassword 메서드 호출하여 생성할 계정 정보(이메일, 패스워드) 전달
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { // 해당 이메일, 패스워드를 이용하는 계정 생성 완료

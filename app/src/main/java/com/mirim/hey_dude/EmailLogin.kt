@@ -18,7 +18,7 @@ class EmailLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-// Initialize Firebase Auth
+        // Initialize Firebase Auth
         auth = Firebase.auth
         val currentUser = auth.currentUser
         if(currentUser != null) {

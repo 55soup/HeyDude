@@ -67,7 +67,7 @@ class SetAlarmActivity : AppCompatActivity() {
         saveBtn = findViewById(R.id.save_btn)
         cancelBtn = findViewById(R.id.cancel_btn)
         switchCompat = findViewById(R.id.switchView)
-        timePicker = findViewById(R.id.timePicker)
+//        timePicker = findViewById(R.id.timePicker)
     }
     fun setAlarmView() {
         timePicker.currentHour = updateAlarm.getHour()

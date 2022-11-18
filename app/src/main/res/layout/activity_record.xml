@@ -7,7 +7,6 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context="com.mirim.hey_dude.RecordActivity">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

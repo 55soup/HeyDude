@@ -32,6 +32,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mirim.hey_dude.friendRecyclerView.FriendItem;
 import com.mirim.hey_dude.friendRecyclerView.MyRecyclerAdapter;
+import com.mirim.hey_dude.recordRecyclerView.RecordAdapter;
 
 import java.sql.Time;
 import java.util.ArrayList;
@@ -92,6 +93,15 @@ public class Fragment3 extends Fragment {
         myRecyclerAdapter = new MyRecyclerAdapter(mFriendList);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         mRecyclerView.setAdapter(myRecyclerAdapter);
+
+        // ---------------------recyclerview click event ---------------------
+        myRecyclerAdapter.setOnItemClickListener(new MyRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClicked(int position, String data) {
+                Toast.makeText(getActivity(),"Position: " + position + "Data: " + data, Toast.LENGTH_SHORT).show();
+            }
+        });
+        // ---------------------recyclerview click event ---------------------
 
         // flotingBtn
         floatBtnAdd.setOnClickListener(new View.OnClickListener() {

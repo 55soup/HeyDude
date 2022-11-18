@@ -1,4 +1,4 @@
-package com.mirim.hey_dude.Login
+package com.mirim.hey_dude
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +17,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import com.mirim.hey_dude.Login.Config
 
 class UserProfileActivity : AppCompatActivity() {
     private val auth = Firebase.auth
@@ -83,7 +84,7 @@ class UserProfileActivity : AppCompatActivity() {
     fun logout() {
         auth.signOut()
         Toast.makeText(this, "로그아웃", Toast.LENGTH_SHORT).show()
-        startActivity(Intent(this, LoginActivity::class.java))
+        startActivity(Intent(this, EmailLogin::class.java))
         finish()
     }
 
@@ -100,7 +101,7 @@ class UserProfileActivity : AppCompatActivity() {
         // 이후 구글 계정도 로그아웃
         googleSignInClient.signOut().addOnCompleteListener {
             Toast.makeText(this, "로그아웃", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, EmailLogin::class.java))
             finish()
         }
     }
