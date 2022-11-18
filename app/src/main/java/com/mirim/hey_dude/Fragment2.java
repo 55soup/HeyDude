@@ -62,6 +62,7 @@ public class Fragment2 extends Fragment {
         // recyclerview 데이터 추가
         for (int i = 0; i < 20; i++)
             mRecordList.add(new RecordItem("09:30", "하진", "4분"));
+        
         myRecordAdapter = new RecordAdapter(mRecordList);
         recordRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recordRecyclerView.setAdapter(myRecordAdapter);
@@ -71,6 +72,7 @@ public class Fragment2 extends Fragment {
             @Override
             public void OnItemClicked(int position, String data) {
                 Toast.makeText(getActivity(),"Position: " + position + "Data: " + data, Toast.LENGTH_SHORT).show();
+                DialogShow();
             }
         });
         // ---------------------recyclerview click event ---------------------
@@ -90,6 +92,7 @@ public class Fragment2 extends Fragment {
 
     }
 
+    // 녹음, 파일 접근허락
     private boolean checkPermissions(){
         int first = ActivityCompat.checkSelfPermission(getContext(),
                 Manifest.permission.RECORD_AUDIO);
@@ -101,5 +104,23 @@ public class Fragment2 extends Fragment {
 
     }
 
+    // dialog출력
+    void DialogShow(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("알림");
+        builder.setMessage("김하진" + "님이"+"\n모닝콜을 원해요!\n수락하시겠습니까?");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        builder.show();
+    }
 
 }

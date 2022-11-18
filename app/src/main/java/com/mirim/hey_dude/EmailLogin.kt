@@ -18,7 +18,7 @@ class EmailLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-// Initialize Firebase Auth
+        // Initialize Firebase Auth
         auth = Firebase.auth
         val currentUser = auth.currentUser
         if(currentUser != null) {
@@ -26,7 +26,7 @@ class EmailLogin : AppCompatActivity() {
             finish()
         }
         findViewById<Button>(R.id.loginBtn).setOnClickListener {
-            val email = findViewById<EditText>(R.id.loginID).text.toString()
+            val email = findViewById<EditText>(R.id.loginID).text.toString().trim()
             val password = findViewById<EditText>(R.id.loginPW).text.toString()
             
             if(email=="" && password=="") // edittext가 공백일때

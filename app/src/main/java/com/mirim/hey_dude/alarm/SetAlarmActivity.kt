@@ -25,7 +25,7 @@ class SetAlarmActivity : AppCompatActivity() {
     var newAlarm = Alarm()
     var alarmHour = 0
     var alarmMinute = 0
-//    lateinit var repeatFlag: Boolean
+//    var repeatFlag: Boolean
     lateinit var REQUEST_STATE: String
     lateinit var preIntent: Intent
 
@@ -67,7 +67,7 @@ class SetAlarmActivity : AppCompatActivity() {
         saveBtn = findViewById(R.id.save_btn)
         cancelBtn = findViewById(R.id.cancel_btn)
         switchCompat = findViewById(R.id.switchView)
-        timePicker = findViewById(R.id.timePicker)
+//        timePicker = findViewById(R.id.timePicker)
     }
     fun setAlarmView() {
         timePicker.currentHour = updateAlarm.getHour()

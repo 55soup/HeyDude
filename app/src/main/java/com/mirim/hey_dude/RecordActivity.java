@@ -136,24 +136,6 @@ public class RecordActivity extends AppCompatActivity {
         }
     }
 
-    void DialogShow(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("알림");
-        builder.setMessage("김하진" + "님이"+"\n모닝콜을 원해요!\n수락하시겠습니까?");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        builder.show();
-    }
-
     private boolean checkPermissions() { //permissions check
         int first = ActivityCompat.checkSelfPermission(getApplicationContext(),
                 Manifest.permission.RECORD_AUDIO);
