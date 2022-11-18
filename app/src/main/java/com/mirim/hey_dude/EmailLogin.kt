@@ -26,7 +26,7 @@ class EmailLogin : AppCompatActivity() {
             finish()
         }
         findViewById<Button>(R.id.loginBtn).setOnClickListener {
-            val email = findViewById<EditText>(R.id.loginID).text.toString()
+            val email = findViewById<EditText>(R.id.loginID).text.toString().trim()
             val password = findViewById<EditText>(R.id.loginPW).text.toString()
             
             if(email=="" && password=="") // edittext가 공백일때

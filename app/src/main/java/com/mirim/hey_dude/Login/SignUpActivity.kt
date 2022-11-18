@@ -1,16 +1,17 @@
 package com.mirim.hey_dude.Login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.hey_dude.R
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import java.lang.Exception
+
 
 class SignUpActivity : AppCompatActivity() {
     // 인증, 데이터베이스 객체 저장
@@ -25,14 +26,14 @@ class SignUpActivity : AppCompatActivity() {
 //        val passwordCheckEditText = findViewById<EditText>(R.id.password_check)
         val nicknameEditText = findViewById<EditText>(R.id.nickname)
         findViewById<Button>(R.id.signUpBtn).setOnClickListener {
-        val email = emailEditText.text.toString()
-        val password = passwordEditText.text.toString()
+        val email = emailEditText.text.toString().trim()
+        val password = passwordEditText.text.toString().trim()
 //            val passwordCheckEditText = passwordCheckEditText.text.toString()
         val nickname = nicknameEditText.text.toString()
+        val mess = ""
             // createUserWithEmailAndPassword 메서드 호출하여 생성할 계정 정보(이메일, 패스워드) 전달
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { // 해당 이메일, 패스워드를 이용하는 계정 생성 완료
-
                     if(it.isSuccessful) {
                         // 계정 생성 성공 이후 유저 정보에 접근 가능
                         val user = auth.currentUser!!
@@ -45,8 +46,9 @@ class SignUpActivity : AppCompatActivity() {
                             // "/users/{uid} 경로에 계정 정보 생성"
                             .child(user.uid)
                             // 이메일과 별명 저장
+                            // 상태메세지, 프로필 사진 저장해야함.
                             .setValue(mapOf("email" to email, "nickname" to
-                                    nickname))
+                                    nickname, "mess" to mess))
                             .addOnCompleteListener {
                                 // 데이터베이스에 계정 정보 등록 완료
                                 if(it.isSuccessful) {
