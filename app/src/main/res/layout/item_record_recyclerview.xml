@@ -50,7 +50,7 @@
         <TextView
             android:id="@+id/txtMessTime"
             android:text="10분 전"
-            android:textSize="8sp"
+            android:textSize="10sp"
             android:layout_columnSpan="2"
             android:layout_gravity="right" />
     </GridLayout>

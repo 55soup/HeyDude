@@ -16,12 +16,6 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/StopRecording"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:text="멈추기" />
+            android:layout_height="wrap_content" />ㄴㅇ
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
