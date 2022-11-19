@@ -6,7 +6,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />\
+
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hey_dude"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true">
         <activity
             android:name="com.mirim.hey_dude.Login.GoogleLoginActivity"
             android:exported="false" />
@@ -27,9 +30,6 @@
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.nodejsLogin.AllUserActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.mirim.hey_dude.Login.RegisterActivity"
             android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.SettingActivity"
@@ -66,10 +66,6 @@
             android:name="com.mirim.hey_dude.alarm.Fragment1"
             android:exported="false"
             tools:ignore="Instantiatable" />
-        <activity
-            android:name="com.mirim.hey_dude.nodejsLogin.LoginNoejsActivity"
-            android:exported="false"
-            tools:ignore="DuplicateActivity" />
     </application>
 
 </manifest>
