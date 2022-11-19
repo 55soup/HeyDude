@@ -1,19 +1,22 @@
 package com.mirim.hey_dude.alarm
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TimePicker
-import android.widget.TimePicker.OnTimeChangedListener
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import com.example.hey_dude.R
-import java.sql.Time
+import kotlin.properties.Delegates
 
 //알람 설정 페이지
-class SetAlarmActivity : AppCompatActivity() {
+public class SetAlarmActivity : AppCompatActivity() {
     //변수 선언
     private lateinit var alarmLabel: EditText
     private lateinit var switchCompat: SwitchCompat
@@ -50,13 +53,17 @@ class SetAlarmActivity : AppCompatActivity() {
             if (REQUEST_STATE == "update") {
                 newAlarm.id = updateAlarm.id
             }
+            val data = Intent()
+            data.putExtra("newAlarm", newAlarm)
+            setResult(RESULT_OK, data) //결과를 저장
+            finish()
         }
 
     }//onCreate()
     fun setAlarm() {
         newAlarm = AlarmBuilder()
-            .setHour(alarmHour)
             .setLabel(alarmLabel.text.toString())
+            .setHour(alarmHour)
             .setMinute(alarmMinute)
 //            .setRepeatFlag(repeatFlag)
             .build()
@@ -83,16 +90,37 @@ class SetAlarmActivity : AppCompatActivity() {
         timePicker.setOnTimeChangedListener(timeChangedListener())
     }
 
-    class timeChangedListener :  TimePicker.OnTimeChangedListener {
+    inner class timeChangedListener :  TimePicker.OnTimeChangedListener {
         override fun onTimeChanged(timeView: TimePicker, hour: Int, minute: Int) {
-//            alarmHour = hour
-//            alarmMinute = minute
+            alarmHour = hour
+            alarmMinute = minute
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode >= 1000)
+            if (requestCode == RESULT_OK) {//성공여부 확인
+
+            }
     }
     companion object {
         fun newIntent(context: Context): Intent {
             return Intent(context, SetAlarmActivity::class.java)
         }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    fun isExternalStorageReadable(): Boolean {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_DENIED
+            ) {
+                requestPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+                return false
+            }
+        }
+        return true
     }
 
     override fun onBackPressed() {
