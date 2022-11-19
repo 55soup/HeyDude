@@ -1,20 +1,26 @@
 package com.mirim.hey_dude
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.example.hey_dude.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.mirim.hey_dude.Login.SignUpActivity
+import okhttp3.OkHttpClient
+
 
 class EmailLogin : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -25,11 +31,19 @@ class EmailLogin : AppCompatActivity() {
             startActivity(Intent(this, NavBar::class.java))
             finish()
         }
+
         findViewById<Button>(R.id.loginBtn).setOnClickListener {
             val email = findViewById<EditText>(R.id.loginID).text.toString().trim()
             val password = findViewById<EditText>(R.id.loginPW).text.toString()
-            
-            if(email=="" && password=="") // edittext가 공백일때
+
+            //Network가 연결이 되어있는가?
+            val connectivityManager = application.getSystemService(ConnectivityManager::class.java)
+            val currentNetwork = connectivityManager.activeNetwork
+            if(currentNetwork==null)
+                Toast.makeText(applicationContext, "네트워크 연결 안됨", Toast.LENGTH_SHORT).show()
+
+            // email, password edittext가 공백일때
+            if(email=="" && password=="")
                 Toast.makeText(baseContext, "이메일 비밀번호를 입력해주세요",
                     Toast.LENGTH_SHORT).show()
             else{
