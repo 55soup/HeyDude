@@ -7,6 +7,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -15,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -34,11 +36,12 @@ public class RecordActivity extends AppCompatActivity {
         private MediaPlayer mediaPlayer;
         private Button btnUpload;
         private String AudioSavaPath = null; // 저장소 위치
-        private static final String LOG_TAG = "Record_log";
         private boolean isRecording = false; // 녹음하고 있는 여부
         private boolean isPlaying = false; // 플레이 여부
         private StorageReference mStorage; //firebase storage 불러오기
         private ProgressDialog mProgress;
+        private EditText EditAudioMess;
+        private String audioFileNameMess;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +53,9 @@ public class RecordActivity extends AppCompatActivity {
             mStorage = FirebaseStorage.getInstance().getReference(); // firebase storage
             mProgress = new ProgressDialog(this); //upload dialog
             btnUpload = findViewById(R.id.btnUpload);
+            EditAudioMess = findViewById(R.id.EditAudioMess);
 
-//            AudioSavaPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+//            AudioSavaPath = Environment.getExternalStorageDirectory().getAbsolutePath(); //작동안함
 //            AudioSavaPath += "/recorded_audio.3gp";
             AudioSavaPath = getExternalFilesDir("/").getAbsolutePath();
             AudioSavaPath += "/" + "RecordExample_" + "audio.mp3";
@@ -59,6 +63,8 @@ public class RecordActivity extends AppCompatActivity {
             btnUpload.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // edittext의 text audio파일 이름으로 설정
+                    audioFileNameMess = EditAudioMess.getText().toString();
                     uploadAudio();
                 }
             });
@@ -75,7 +81,6 @@ public class RecordActivity extends AppCompatActivity {
                         isRecording=false;
                         StopRecording();
                         playingBtn.setEnabled(true);
-                        Toast.makeText(getApplicationContext(), "녹음버튼 클릭", Toast.LENGTH_SHORT).show();
                     }else{
                         //현재 녹음x
                         if(checkPermissions()){
@@ -110,7 +115,7 @@ public class RecordActivity extends AppCompatActivity {
             mediaRecorder = new MediaRecorder();
             mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
 //            mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4); //레고팅 설정 / firebase storage에서 실행 안됨
-            mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.AAC_ADTS);
+            mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.AAC_ADTS); //레코딩 설정 수정 / 실행됨.
             mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
 //            mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP); //내보낼때 레코딩 설정
             mediaRecorder.setOutputFile(AudioSavaPath);
@@ -180,17 +185,34 @@ public class RecordActivity extends AppCompatActivity {
     }
 
     private void uploadAudio(){
-        mProgress.setMessage("Uploading Audio ...");
-        mProgress.show();
-
-        StorageReference filepath = mStorage.child("Audio").child("new_audio.mp3");
-        Uri uri = Uri.fromFile(new File(AudioSavaPath));
-        filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        AlertDialog.Builder dlg = new AlertDialog.Builder(RecordActivity.this);
+        dlg.setTitle("알림");
+        dlg.setMessage("김하진" + "님에게"+"\n보내시겠습니까?");
+        dlg.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                mProgress.dismiss();
-                Toast.makeText(RecordActivity.this, "오디오 파일 보내기 성공!", Toast.LENGTH_SHORT).show();
+            public void onClick(DialogInterface dialog, int which) {
+                mProgress.setMessage("Uploading Audio ...");
+                mProgress.show();
+
+                StorageReference filepath = mStorage.child("Audio").child(audioFileNameMess + ".mp3");
+                Uri uri = Uri.fromFile(new File(AudioSavaPath));
+                filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        mProgress.dismiss();
+                        Toast.makeText(RecordActivity.this, "오디오 파일 보내기 성공!", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
+        dlg.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        dlg.show(); //반드시 추가
+
     }
+
+
 }
