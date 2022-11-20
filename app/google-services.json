@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "789290372757",
+    "project_id": "hey-dude-2b076",
+    "storage_bucket": "hey-dude-2b076.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789290372757:android:58b66bb4fc8e9e107fd59c",
+        "android_client_info": {
+          "package_name": "com.mirim.hey_dude"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789290372757-h00au8ef4chhg2lnkphvum9f2ivohe10.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mirim.hey_dude",
+            "certificate_hash": "9090c00a4004305b50d41d6ad93c714a157a4ac2"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQAr_Ql20SBoO-ZI9USeMkBT38I-fLhTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

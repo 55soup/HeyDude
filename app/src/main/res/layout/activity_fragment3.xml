@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="10dp"
+              android:layout_marginBottom="50dp">
+
+              <EditText
+                  android:id="@+id/edit_search"
+                  android:layout_width="match_parent"
+                  android:layout_height="70dp"
+                  android:layout_marginBottom="40dp"
+                  android:background="@drawable/login_edittext"
+                  android:drawableLeft="@drawable/ic_baseline_search_24"
+                  android:drawablePadding="12dp"
+                  android:gravity="center_vertical"
+                  android:hint="친구를 찾아보세요!"
+                  android:padding="10dp"
+                  android:textSize="12sp" />
+
+              <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="친구목록"
+                 android:layout_marginBottom="16dp"/>
+             <androidx.recyclerview.widget.RecyclerView
+                 android:id="@+id/recyclerView"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:nestedScrollingEnabled="false"
+                 android:overScrollMode="never"/>
+          </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatBtnAdd"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        app:fabCustomSize="45dp"
+        android:layout_gravity="bottom|end"
+        android:backgroundTint="@color/main_color"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="80dp"
+        app:borderWidth="0dp"
+        app:tint="@color/white"
+        android:src="@drawable/ic_baseline_person_add_alt_1_24" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
