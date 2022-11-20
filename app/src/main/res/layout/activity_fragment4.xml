@@ -67,7 +67,7 @@
             android:id="@+id/txtMess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="나 좀 깨워주라 애들아~" />
+            android:text="" />
 
     </LinearLayout>
 
