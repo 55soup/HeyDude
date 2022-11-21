@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Hey_dude"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.mirim.hey_dude.FcmMessActivity"
+            android:exported="false" />
+        <activity
             android:name="com.mirim.hey_dude.UserlistActivity"
             android:exported="false" />
         <activity

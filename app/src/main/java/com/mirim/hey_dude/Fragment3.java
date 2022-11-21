@@ -1,9 +1,12 @@
 package com.mirim.hey_dude;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -11,24 +14,39 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hey_dude.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.mirim.hey_dude.friendRecyclerView.FriendItem;
 import com.mirim.hey_dude.friendRecyclerView.MyRecyclerAdapter;
+import com.mirim.hey_dude.recordRecyclerView.RecordAdapter;
+import com.mirim.hey_dude.userRecyclerView.UserAdapter;
+import com.mirim.hey_dude.userRecyclerView.UserItem;
 
 import java.util.ArrayList;
 
 
-public class Fragment3 extends Fragment {
-    RecyclerView mRecyclerView;
+public class Fragment3 extends Fragment{
     FloatingActionButton floatBtnAdd;
-    private ArrayList<FriendItem> mFriendList;
-    private MyRecyclerAdapter myRecyclerAdapter;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private UserAdapter userAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private ArrayList<UserItem> arrayList;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
 
     public Fragment3() {
         // Required empty public constructor
@@ -41,34 +59,16 @@ public class Fragment3 extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.activity_fragment3, container, false);
         super.onCreate(savedInstanceState);
-        mRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
         floatBtnAdd = (FloatingActionButton) v.findViewById(R.id.floatBtnAdd);
 
-
-        // recyclerView
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        mFriendList = new ArrayList<>();
-
-        // item 추가
-        for (int i = 0; i < 20; i++) {
-            mFriendList.add(new FriendItem("선주", "우우웅", "R.drawable.ic_baseline_add_24"));
-        }
-        mFriendList.add(new FriendItem("하진", "엉", "R.drawable.ic_baseline_add_24"));
-        mFriendList.add(new FriendItem("전진", "엉", "R.drawable.ic_baseline_add_24"));
-
-        myRecyclerAdapter = new MyRecyclerAdapter(mFriendList);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        mRecyclerView.setAdapter(myRecyclerAdapter);
-
-        // ---------------------recyclerview click event ---------------------
-        myRecyclerAdapter.setOnItemClickListener(new MyRecyclerAdapter.OnItemClickListener() {
-            @Override
-            public void OnItemClicked(int position, String data) {
-                Toast.makeText(getActivity(),"Position: " + position + "Data: " + data, Toast.LENGTH_SHORT).show();
-            }
-        });
-        // ---------------------recyclerview click event ---------------------
+        recyclerView.setHasFixedSize(true); //리사이클러뷰 기존성능 강화
+        layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        arrayList = new ArrayList<>(); //User객체를 담을 arraylist
+        userAdapter = new UserAdapter(arrayList, getContext());
+        adapter = new UserAdapter(arrayList, getContext());
+        recyclerView.setAdapter(adapter); // 리사이클러뷰에 어뎀터 넘기기
 
         // flotingBtn
         floatBtnAdd.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +80,53 @@ public class Fragment3 extends Fragment {
             }
         });
 
-        return v; // 반드시 추가
+        // 파이어베이스 데이터베이스 연동
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("users");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // 파이어베이스 데이터베이스의 데이터를 받아오는 곳
+                arrayList.clear(); //기존 배열리스트가 존재하지 않게 초기화
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){ //반복문으로 데이터 List를 추춘해냄
+                    UserItem user = snapshot.getValue(UserItem.class); // 만들어뒀던 User 객체에 데이터를 닫는다
+                    arrayList.add(user); // 담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
+                }
+                adapter.notifyDataSetChanged(); //리스트 저장 및 새로고침
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                //DB를 가져오던 중 에러 발생 시
+                Log.e("UserListActivity", String.valueOf(error.toException())); //에러문 출력
+            }
+        });
+
+
+        // ============================================================
+        // ============================================================
+
+        return v;
+
+    }
+    // dialog출력
+    void DialogShow(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setIcon(R.drawable.alarm_icon);
+        builder.setTitle(" ");
+        builder.setMessage("김하진" + "님에게"+"\n모닝콜을 부탁하시겠습니까?");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(builder.getContext(), "이동", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        builder.show();
     }
 
 }
