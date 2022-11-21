@@ -58,6 +58,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.1' //라이브러리 의존성 추가
     //역직렬화 작업을 위한 컨버터 라이브러리 추가
     implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    //RoomDatabase
+    implementation 'androidx.room:room-ktx:2.4.3'
     //토글버튼 커스텀
 //    implementation 'com.github.angade25:toggle:1.1.0'
 

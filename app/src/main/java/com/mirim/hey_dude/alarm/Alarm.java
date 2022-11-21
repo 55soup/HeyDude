@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+//Room에서 사용 할 테이블
 @Entity(tableName = "alarm_table")
 public class Alarm implements Serializable {
 
