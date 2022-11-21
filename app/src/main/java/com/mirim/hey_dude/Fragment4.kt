@@ -54,14 +54,12 @@ class Fragment4 : Fragment() {
                         txtNickname.setText(nickname)
                         val message = snapshot.child("mess").getValue().toString()
                         txtMess.setText(message)
+                        val email = user.email
+                        txtEmail.setText(email.toString())
                     }
                     override fun onCancelled(error: DatabaseError) {}
                 }
             )
-
-            val email = user.email
-//            val nickname =
-            txtEmail.setText(email.toString())
         }
         btnSet.setOnClickListener {
             val intent = Intent(this.context, SettingActivity::class.java)  // 인텐트를 생성해줌,

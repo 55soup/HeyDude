@@ -31,6 +31,7 @@ class SignUpActivity : AppCompatActivity() {
 //            val passwordCheckEditText = passwordCheckEditText.text.toString()
         val nickname = nicknameEditText.text.toString()
         val mess = "나 좀 깨워주라 애들아~"
+        val profile = ""
             // createUserWithEmailAndPassword 메서드 호출하여 생성할 계정 정보(이메일, 패스워드) 전달
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { // 해당 이메일, 패스워드를 이용하는 계정 생성 완료
@@ -48,7 +49,7 @@ class SignUpActivity : AppCompatActivity() {
                             // 이메일과 별명 저장
                             // 상태메세지, 프로필 사진 저장해야함.
                             .setValue(mapOf("email" to email, "nickname" to
-                                    nickname, "mess" to mess))
+                                    nickname, "mess" to mess, "profile" to profile))
                             .addOnCompleteListener {
                                 // 데이터베이스에 계정 정보 등록 완료
                                 if(it.isSuccessful) {

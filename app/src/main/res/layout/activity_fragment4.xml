@@ -60,7 +60,7 @@
             android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="w2128@e-mirim.hs.kr"
+            android:text=""
             android:textSize="10dp"
             android:layout_marginBottom="16dp"/>
         <TextView
