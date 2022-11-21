@@ -73,6 +73,7 @@ dependencies {
     implementation 'androidx.room:room-compiler:2.3.0'
     implementation 'com.google.firebase:firebase-storage:20.1.0'
     implementation 'com.google.firebase:firebase-firestore:24.4.1'
+    implementation 'com.google.firebase:firebase-firestore:24.4.1'
     implementation 'com.google.firebase:firebase-storage:20.1.0'
     implementation 'com.google.firebase:firebase-firestore:24.4.1'
     implementation 'com.google.firebase:firebase-messaging:23.0.7'
@@ -113,5 +114,9 @@ dependencies {
 
     //notification
 //    implementation 'com.andoird.volley:volley:1.1.1'
+
+    // 이미지 로딩을 더 빠르게 할 수 있음.
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
 
 }
