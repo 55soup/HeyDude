@@ -84,7 +84,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
                 itemClickListener.OnItemClicked(position, data);
             }
         });
-        //--------------------- onclick event ---------------------ㄴ
+        //--------------------- onclick event ---------------------
         return vh;
     }
 

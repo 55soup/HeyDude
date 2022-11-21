@@ -18,6 +18,10 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
 
     private ArrayList<RecordItem> mRecordList = null;
 
+    public RecordAdapter(ArrayList<RecordItem> mRecordList) {
+        this.mRecordList = mRecordList;
+    }
+
     // ---------------------click이벤트 구현을 위한 코드---------------------
     public interface OnItemClickListener {
         void OnItemClicked(int position, String data);
@@ -51,11 +55,6 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
         }
     }
 
-    public RecordAdapter(ArrayList<RecordItem> mRecordList) {
-        this.mRecordList = mRecordList;
-    }
-
-
     @NonNull
     @Override
     public RecordAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -76,7 +75,7 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
                 itemClickListener.OnItemClicked(position, data);
             }
         });
-        //--------------------- onclick event ---------------------ㄴ
+        //--------------------- onclick event ---------------------
         return vh;
     }
 
