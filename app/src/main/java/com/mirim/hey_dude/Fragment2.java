@@ -52,7 +52,6 @@ public class Fragment2 extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.activity_fragment2, container, false);
         recordRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
-        StopRecording = (Button)v.findViewById(R.id.StopRecording);
 
         //////////////////// recyclerview
         recordRecyclerView.setHasFixedSize(true);
@@ -71,23 +70,12 @@ public class Fragment2 extends Fragment {
         myRecordAdapter.setOnItemClickListener(new RecordAdapter.OnItemClickListener() {
             @Override
             public void OnItemClicked(int position, String data) {
-                Toast.makeText(getActivity(),"Position: " + position + "Data: " + data, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(),"Position: " + position + "Data: " + data, Toast.LENGTH_SHORT).show();
                 DialogShow();
             }
         });
         // ---------------------recyclerview click event ---------------------
         //====================== recyclerview ======================
-
-
-        //////////////////// recordView
-        StopRecording.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplication(), RecordActivity.class);
-                startActivity(intent);
-            }
-        });
-
         return v; // 반드시 추가
 
     }
@@ -107,12 +95,15 @@ public class Fragment2 extends Fragment {
     // dialog출력
     void DialogShow(){
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("알림");
+        builder.setIcon(R.drawable.alarm_icon);
+        builder.setTitle(" ");
         builder.setMessage("김하진" + "님이"+"\n모닝콜을 원해요!\n수락하시겠습니까?");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                Intent intent = new Intent(getActivity().getApplication(), RecordActivity.class);
+                startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
             }
         });
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {

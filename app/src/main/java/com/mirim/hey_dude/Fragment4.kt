@@ -45,14 +45,15 @@ class Fragment4 : Fragment() {
         val txtEmail = view.findViewById<TextView>(R.id.txtEmail)
         val txtMess = view.findViewById<TextView>(R.id.txtMess)
 
-
         user?.let {
             // Name, email address, and profile photo Url
             val uid = user.uid //각 사용자를 구별하는 uid
             reference.child(uid).addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                       val nickname = snapshot.child("nickname").getValue()
-                       txtNickname.setText(nickname.toString())
+                        val nickname = snapshot.child("nickname").getValue().toString()
+                        txtNickname.setText(nickname)
+                        val message = snapshot.child("mess").getValue().toString()
+                        txtMess.setText(message)
                     }
                     override fun onCancelled(error: DatabaseError) {}
                 }

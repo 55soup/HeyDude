@@ -7,18 +7,20 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />\
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hey_dude"
-        android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true">
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.mirim.hey_dude.UserlistActivity"
+            android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.Login.GoogleLoginActivity"
             android:exported="false" />
@@ -38,8 +40,9 @@
             android:name="com.mirim.hey_dude.alarm.SetAlarmActivity"
             android:exported="false"
             android:parentActivityName="com.mirim.hey_dude.NavBar" />
-        <activity android:name="com.mirim.hey_dude.Login.SignUpActivity"
-            android:exported="false"/>
+        <activity
+            android:name="com.mirim.hey_dude.Login.SignUpActivity"
+            android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.EmailLogin"
             android:exported="true"

@@ -30,7 +30,7 @@ class SignUpActivity : AppCompatActivity() {
         val password = passwordEditText.text.toString().trim()
 //            val passwordCheckEditText = passwordCheckEditText.text.toString()
         val nickname = nicknameEditText.text.toString()
-        val mess = ""
+        val mess = "나 좀 깨워주라 애들아~"
             // createUserWithEmailAndPassword 메서드 호출하여 생성할 계정 정보(이메일, 패스워드) 전달
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { // 해당 이메일, 패스워드를 이용하는 계정 생성 완료
