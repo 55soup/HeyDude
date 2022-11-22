@@ -1,37 +1,24 @@
 package com.mirim.hey_dude;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hey_dude.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.mirim.hey_dude.friendRecyclerView.FriendItem;
-import com.mirim.hey_dude.friendRecyclerView.MyRecyclerAdapter;
-import com.mirim.hey_dude.recordRecyclerView.RecordAdapter;
 import com.mirim.hey_dude.userRecyclerView.UserAdapter;
 import com.mirim.hey_dude.userRecyclerView.UserItem;
 
@@ -39,7 +26,7 @@ import java.util.ArrayList;
 
 
 public class Fragment3 extends Fragment{
-    FloatingActionButton floatBtnAdd;
+//    FloatingActionButton floatBtnAdd;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private UserAdapter userAdapter;
@@ -60,7 +47,7 @@ public class Fragment3 extends Fragment{
         View v = inflater.inflate(R.layout.activity_fragment3, container, false);
         super.onCreate(savedInstanceState);
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
-        floatBtnAdd = (FloatingActionButton) v.findViewById(R.id.floatBtnAdd);
+//        floatBtnAdd = (FloatingActionButton) v.findViewById(R.id.floatBtnAdd);
 
         recyclerView.setHasFixedSize(true); //리사이클러뷰 기존성능 강화
         layoutManager = new LinearLayoutManager(getContext());
@@ -69,16 +56,6 @@ public class Fragment3 extends Fragment{
         userAdapter = new UserAdapter(arrayList, getContext());
         adapter = new UserAdapter(arrayList, getContext());
         recyclerView.setAdapter(adapter); // 리사이클러뷰에 어뎀터 넘기기
-
-        // flotingBtn
-        floatBtnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplication(), UserlistActivity.class);
-                startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
-            }
-        });
 
         // 파이어베이스 데이터베이스 연동
         database = FirebaseDatabase.getInstance();
@@ -102,31 +79,21 @@ public class Fragment3 extends Fragment{
             }
         });
 
+        // ============================================================
 
         // ============================================================
-        // ============================================================
+//        // flotingBtn
+//        floatBtnAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getActivity().getApplication(), UserlistActivity.class);
+//                startActivity(intent);
+//                getActivity().overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
+//            }
+//        });
 
         return v;
 
-    }
-    // dialog출력
-    void DialogShow(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setIcon(R.drawable.alarm_icon);
-        builder.setTitle(" ");
-        builder.setMessage("김하진" + "님에게"+"\n모닝콜을 부탁하시겠습니까?");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(builder.getContext(), "이동", Toast.LENGTH_SHORT).show();
-            }
-        });
-        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        builder.show();
     }
 
 }
