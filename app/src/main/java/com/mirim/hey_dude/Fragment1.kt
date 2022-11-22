@@ -22,7 +22,7 @@ class Fragment1 : Fragment() {
     lateinit var alarmFragmentBinding: ActivityFragment1Binding
     lateinit var alarmAdapter: AlarmAdapter
     lateinit var alarmRecyclerView: RecyclerView
-    lateinit var alarmViewModel: AlarmViewModel
+//    lateinit var alarmViewModel: AlarmViewModel
 
     val TAG = "AlarmFragment"
     var db : AlarmDatabase? = null
@@ -33,7 +33,7 @@ class Fragment1 : Fragment() {
         var context = requireContext()
 
         //초기화
-        db = AlarmDatabase.getDatabase(context)
+//        db = AlarmDatabase.getDatabase(context)
         //이전에 저장한 내용 모두 불러와서 추가하기기
        val savedAlarm = db!!.alarmDao().getAll()
         if(savedAlarm.isNotEmpty()){
@@ -70,10 +70,10 @@ class Fragment1 : Fragment() {
     }
 
     public fun updateAlarmManager(alarm: Alarm, request: String){
-        val alarmIntent = Intent(activity, AlarmManagerActivity::class.java)
-        alarmIntent.putExtra("alarm", alarm)
-        alarmIntent.putExtra("request", request)
-        startActivity(alarmIntent)
+//        val alarmIntent = Intent(activity, AlarmManagerActivity::class.java)
+//        alarmIntent.putExtra("alarm", alarm)
+//        alarmIntent.putExtra("request", request)
+//        startActivity(alarmIntent)
     }
 
     public fun attachItemTouchHelperToAdapter() {

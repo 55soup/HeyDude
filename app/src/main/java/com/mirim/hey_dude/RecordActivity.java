@@ -1,25 +1,22 @@
 package com.mirim.hey_dude;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.example.hey_dude.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -201,6 +198,7 @@ public class RecordActivity extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         mProgress.dismiss();
                         Toast.makeText(RecordActivity.this, "오디오 파일 보내기 성공!", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 });
             }

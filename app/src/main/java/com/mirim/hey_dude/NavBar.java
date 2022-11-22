@@ -34,7 +34,7 @@ public class NavBar extends AppCompatActivity {
         fragment4 = new Fragment4();
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         fab_btn = findViewById(R.id.FloatBtn);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment2).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
