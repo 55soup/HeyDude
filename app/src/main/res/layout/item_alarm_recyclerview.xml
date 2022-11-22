@@ -3,12 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="310dp"
+    android:layout_width="360dp"
     android:layout_height="64dp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="20dp"
-    android:layout_marginLeft="50dp"
-    android:layout_marginTop="50dp"
+    app:cardElevation="5dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="30dp"
     android:background="@drawable/radius">
     <GridLayout
         android:columnCount="3"
@@ -27,10 +27,10 @@
         <LinearLayout
             android:orientation="vertical">
             <TextView
-                android:id="@+id/txtTime"
+                android:id="@+id/alarm_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9:30 AM"
+                android:text="09:30"
                 android:textColor="@color/black"
                 android:textSize="16dp"
                 android:paddingTop="14dp"
@@ -48,7 +48,7 @@
             android:thumb="@drawable/shape_switch_thumb"
             app:track="@drawable/selector_switch"
             android:checked="true"
-            android:layout_marginLeft="116dp"
+            android:layout_marginLeft="180dp"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

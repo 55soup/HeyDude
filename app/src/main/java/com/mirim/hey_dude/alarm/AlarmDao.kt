@@ -3,11 +3,10 @@ package com.mirim.hey_dude.alarm
 import android.database.Observable
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import java.util.*
 
 @Dao
 interface AlarmDao {
-    @Query("SELECT * FROM alarm_table")
+    @Query("SELECT * FROM alarmTable")
     fun getAll(): List<Alarm>
 
     @Insert
@@ -19,13 +18,7 @@ interface AlarmDao {
     @Update
     fun update(vararg alarm: Alarm)
 
-    @Query("SELECT * FROM alarm_table")
-    fun getAllAlarms(): LiveData<List<Alarm>>
-
-    @Query("SELECT * FROM alarm_table")
-    fun getAllAlarmsFromService(): Observable<List<Alarm>>
-
-    @Query("SELECT * FROM alarm_table WHERE id = :id")
-    fun getAlarm (id: Int): Alarm
+    @Query("DELETE FROM alarmTable")
+    fun deleteAll()
 }
 

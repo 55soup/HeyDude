@@ -1,38 +1,39 @@
 package com.mirim.hey_dude.alarm
 
+import android.app.Application
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [Alarm::class], version = 1, exportSchema = false)
+@Database(entities = arrayOf(Alarm::class), version = 1, exportSchema = false)
 abstract class AlarmDatabase : RoomDatabase() {
-    abstract fun alarmDao(): AlarmDao
+    abstract fun alarmDao() : AlarmDao
 
     companion object {
-        private var instance: AlarmDatabase? = null
-
-        @Synchronized
-        fun getInstance(context: Fragment1) : AlarmDatabase? {
-            if(instance == null) {
-                instance = Room.databaseBuilder(
-                    context.applicationContext,
+        private var INSTANCE: AlarmDatabase? = null
+        fun getInstance(context: Context) : AlarmDatabase {
+            if(INSTANCE == null) {
+                INSTANCE = Room.databaseBuilder(
+                    context,
                     AlarmDatabase::class.java,
-                    "database-alarm")
-                    .fallbackToDestructiveMigration()
-                    .addCallback(roomCallBack)
-                    //.allowMainThreadQueries()
-                    //allowMainThreadQueries() : 메인스레드에서 DB접근 허용, 데이터를 받아오는 작업이 길어질 경우 UI가 장시간 멈춤 권장x
+                    "alarm_database")
+                    .addCallback(sRoomDatabaseCallback)
                     .build()
             }
-            return instance as AlarmDatabase
+            return INSTANCE as AlarmDatabase
         }
-        private val roomCallBack: Callback = object : Callback() {
-            override fun onCreate(db: SupportSQLiteDatabase) {
-                super.onCreate(db)
+        private var sRoomDatabaseCallback = object : RoomDatabase.Callback() {
+            override fun onOpen(db: SupportSQLiteDatabase) {
+                super.onOpen(db)
+                Thread {
+                    val dao: AlarmDao? = INSTANCE?.alarmDao()
+                    dao?.deleteAll()
+                    //데이터 채우기
+                }.start()
             }
         }
     }
-
 
 }

@@ -1,68 +1,60 @@
 package com.mirim.hey_dude.alarm
 
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hey_dude.R
-import com.example.hey_dude.databinding.ItemAlarmRecyclerviewBinding
 
 //DiffUtil :  RecyclerView Adpater의 업데이트를 계산하는데 사용된다.
 //ListAdapter : DiffUtil을 활용하여 리스트를 업데이트 할 수 있는 기능 추가 Adapter
-class AlarmAdapter : ListAdapter<Alarm, AlarmAdapter.AlarmItemViewHolder>(diffUtil){
+class AlarmAdapter(var items: List<AlarmItem>)
+    : RecyclerView.Adapter<AlarmAdapter.ViewHolder>() {
 
-    //AlarmItemViewHolder
-    inner class AlarmItemViewHolder(private val binding: ItemAlarmRecyclerviewBinding)
-        :RecyclerView.ViewHolder(binding.root){
+    lateinit var mContext: Context
 
-        //ViewHolder : 내가 넣고자하는 data를 실제 레이아웃의 데이터로 연결시키는 기능
-        fun bind(alarmModel: Alarm){
-//            binding.alarmSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
-//                //getBindingAdapterPosition() : Adapter 내의 위치를 반환
-//                val position: Int = getBindingAdapterPosition()
-//
-//            }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view: View = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_alarm_recyclerview, parent, false)
+        mContext = parent.context
 
-            binding.alarmLabel.text = alarmModel.label
-            binding.alarmIcon.setImageResource(R.drawable.alarm_icon)
-            binding.txtTime.text = alarmModel.hour.toString()
-            }
-
+        return ViewHolder(view)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlarmItemViewHolder {
-
-        val itemBinding = ItemAlarmRecyclerviewBinding.inflate(
-                           LayoutInflater.from(parent.context),parent,false)
-
-        return AlarmItemViewHolder(itemBinding)
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(items!!.get(position), position)
+        holder.label.text = items.get(position).label
+        holder.time.text = items.get(position).time
     }
 
-    override fun onBindViewHolder(holder: AlarmItemViewHolder, position: Int) {
-        val alarm = getItem(position)
-        holder.bind(currentList[position])
-//        holder.bind(alarm)
+    override fun getItemCount(): Int {
+        return items.size
     }
 
-    fun getAlarmAt(position: Int): Alarm? {
-        return getItem(position)
-    }
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        var index: Int? = null
+//        label = itemView.findViewById(R.id.alarm_label)
+        lateinit var label: TextView
+        lateinit var time: TextView
+        fun bind(alarm: AlarmItem, position: Int) {
+            label = itemView.findViewById(R.id.alarm_label)
+            time = itemView.findViewById(R.id.alarm_time)
 
-    //diffUtil 사용하려면 diffUtil.callback  기능 구현
-    companion object {
-        val diffUtil = object :DiffUtil.ItemCallback<Alarm>() {
-            override fun areItemsTheSame(oldItem: Alarm, newItem: Alarm): Boolean {
-                return oldItem.id == newItem.id
-            }
-
-            override fun areContentsTheSame(oldItem: Alarm, newItem: Alarm): Boolean {
-                return oldItem.label.equals(newItem.label)&&
-                        oldItem.hour == newItem.hour &&
-                        oldItem.minute == newItem.minute
-            }
+            index = position
+            label.setText(alarm.label)
+            time.setText(alarm.time)
 
         }
+
+//        fun editData(label: String){
+//            Thread {
+//                index?.let { items!!.get(it). = contents }
+//                index?.let { items!!.get(it) }?.let { db.alarmDao().update(it) }
+//            }
+//        }
     }
+
 }
 

@@ -64,7 +64,7 @@ public class NavBar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //액티비티 이동 시 화면 전환 애니메이션
-                Intent intent = new Intent(NavBar.this , SetAlarmActivity.class);
+                Intent intent = new Intent(NavBar.this, SetAlarmActivity.class);
                 startActivity(intent);
 
                 overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
