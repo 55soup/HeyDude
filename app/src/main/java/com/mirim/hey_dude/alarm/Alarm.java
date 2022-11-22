@@ -5,6 +5,9 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+import io.reactivex.Scheduler;
+import io.reactivex.Single;
+
 //Room에서 사용 할 테이블
 @Entity(tableName = "alarm_table")
 public class Alarm implements Serializable {
@@ -47,6 +50,16 @@ public class Alarm implements Serializable {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    @Override
+    public String toString() {
+        return "Alarm{" +
+                "id=" + id +
+                ", label=" + label +
+                ", hour=" + hour +
+                ", minute=" + minute +
+                '}';
     }
 
 //    public boolean isRepeatFlag() {
