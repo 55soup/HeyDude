@@ -7,19 +7,21 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.hey_dude.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.mirim.hey_dude.alarm.Fragment1;
-import com.mirim.hey_dude.alarm.SetAlarmActivity;
 
 public class NavBar extends AppCompatActivity {
     Fragment1 fragment1;
     Fragment2 fragment2;
     Fragment3 fragment3;
     Fragment4 fragment4;
+    SetAlarmFragment setAlarmFragment;
     BottomNavigationView bottomNavigationView;
     FloatingActionButton fab_btn;
 
@@ -32,6 +34,8 @@ public class NavBar extends AppCompatActivity {
         fragment2 = new Fragment2();
         fragment3 = new Fragment3();
         fragment4 = new Fragment4();
+        setAlarmFragment = new SetAlarmFragment();
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         fab_btn = findViewById(R.id.FloatBtn);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
@@ -64,10 +68,14 @@ public class NavBar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //액티비티 이동 시 화면 전환 애니메이션
-                Intent intent = new Intent(NavBar.this, SetAlarmActivity.class);
-                startActivity(intent);
-
-                overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
+//                Intent intent = new Intent(NavBar.this, SetAlarmFragment.class);
+//                startActivity(intent);
+//                FragmentManager fragmentManager = getSupportFragmentManager();
+//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment_container, setAlarmFragment);
+//                fragmentTransaction.commit()f
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, setAlarmFragment).commit();
+//                overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
             }
         });
     }

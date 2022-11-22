@@ -58,8 +58,8 @@ class Fragment1 : Fragment() {
 
 //        TODO: AlarmAdapter
         val alarmList = listOf(
-            AlarmItem("hi","1시30분"),
-            AlarmItem("hi","1시30분"),
+            AlarmItem("졸업식","9시 30분"),
+            AlarmItem("학교 가자","6시 45분"),
             AlarmItem("hi","1시30분"),
             AlarmItem("hi","1시30분"),
             AlarmItem("hi","1시30분"),
