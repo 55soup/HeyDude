@@ -1,6 +1,6 @@
 package com.mirim.hey_dude.userRecyclerView;
 
-import android.app.AlertDialog;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +27,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     private ArrayList<UserItem> arrayList;
     private Context context;
+    private String nickname;
 
 
     public UserAdapter(ArrayList<UserItem> arrayList, Context context) {
@@ -56,7 +58,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
                 .into(holder.profileImg);
         holder.userName.setText(arrayList.get(position).getNickname());
         holder.userMess.setText(arrayList.get(position).getMess());
-
     }
 
     @Override
@@ -77,15 +78,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             this.userMess = itemView.findViewById(R.id.userMess);
             this.cardView = itemView.findViewById(R.id.cardView);
 
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if(position != RecyclerView.NO_POSITION && listener != null){
-
-                    }
-                }
-            });
         }
     }
 
@@ -93,7 +85,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         void onItemClick(DocumentSnapshot documentSnapshot, int position);
     }
 
-    public void setOnItemClickListener(OnItemClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener, String nickname) {
         this.listener = listener;
     }
     // dialog출력
@@ -101,7 +93,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setIcon(R.drawable.alarm_icon);
         builder.setTitle(" ");
-        builder.setMessage("김하진" + "님에게"+"\n모닝콜을 부탁하시겠습니까?");
+        builder.setMessage("모닝콜을 부탁하시겠습니까?");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

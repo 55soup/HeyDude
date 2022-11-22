@@ -4,6 +4,7 @@ public class UserItem {
     String nickname;
     String mess;
     String profile;
+    String UID;
 
     public UserItem(){}
 
@@ -30,4 +31,13 @@ public class UserItem {
     public void setProfile(String profile) {
         this.profile = profile;
     }
+
+    public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
+    }
+
 }
