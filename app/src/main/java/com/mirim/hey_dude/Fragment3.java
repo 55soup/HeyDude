@@ -1,14 +1,11 @@
 package com.mirim.hey_dude;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -83,16 +80,7 @@ public class Fragment3 extends Fragment{
         });
 
         // ============================================================
-        // ---------------------recyclerview click event ---------------------
-        userAdapter.setOnItemClickListener(new UserAdapter.OnItemClickListener() {
-            @Override
-            public void OnItemClicked(int position, String data) {
-                Log.d("ㅎㅇ", "클릭");
-                Toast.makeText(getContext(),"Position: " + position + "Data: " + data, Toast.LENGTH_SHORT).show();
-//                DialogShow();
-            }
-        });
-        // ---------------------recyclerview click event ---------------------
+
         // ============================================================
 //        // flotingBtn
 //        floatBtnAdd.setOnClickListener(new View.OnClickListener() {
@@ -106,25 +94,6 @@ public class Fragment3 extends Fragment{
 
         return v;
 
-    }
-    // dialog출력
-    void DialogShow(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setIcon(R.drawable.alarm_icon);
-        builder.setTitle(" ");
-        builder.setMessage("김하진" + "님에게"+"\n모닝콜을 부탁하시겠습니까?");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(builder.getContext(), "이동", Toast.LENGTH_SHORT).show();
-            }
-        });
-        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        builder.show();
     }
 
 }
