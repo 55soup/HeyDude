@@ -9,6 +9,10 @@ import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
@@ -16,19 +20,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.Toast;
-
 import com.example.hey_dude.R;
 import com.mirim.hey_dude.recordRecyclerView.RecordAdapter;
 import com.mirim.hey_dude.recordRecyclerView.RecordItem;
 
-import java.io.IOException;
 import java.util.ArrayList;
 // udpate
 public class Fragment2 extends Fragment {
@@ -59,6 +54,8 @@ public class Fragment2 extends Fragment {
         mRecordList = new ArrayList<>();
 
         // recyclerview 데이터 추가
+        mRecordList.add(new RecordItem("10:30", "킴.", "1분"));
+        mRecordList.add(new RecordItem("10:30", "쭈쭈", "1분"));
         for (int i = 0; i < 20; i++)
             mRecordList.add(new RecordItem("09:30", "하진", "4분"));
         
@@ -71,7 +68,7 @@ public class Fragment2 extends Fragment {
             @Override
             public void OnItemClicked(int position, String data) {
 //                Toast.makeText(getActivity(),"Position: " + position + "Data: " + data, Toast.LENGTH_SHORT).show();
-                DialogShow();
+                DialogShow(position);
             }
         });
         // ---------------------recyclerview click event ---------------------
@@ -92,8 +89,15 @@ public class Fragment2 extends Fragment {
 
     }
 
+    public void removeItem(int position){
+        // recyclerview item을 삭제하는 코드
+        mRecordList.remove(position);
+        recordRecyclerView.invalidate();
+        recordRecyclerView.getAdapter().notifyDataSetChanged();
+    }
+
     // dialog출력
-    void DialogShow(){
+    void DialogShow(int position){
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setIcon(R.drawable.alarm_icon);
         builder.setTitle(" ");
@@ -104,6 +108,8 @@ public class Fragment2 extends Fragment {
                 Intent intent = new Intent(getActivity().getApplication(), RecordActivity.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
+                // 클릭 후 item항목 삭제하기
+                removeItem(position);
             }
         });
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
