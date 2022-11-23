@@ -1,5 +1,6 @@
 package com.mirim.hey_dude;
 
+ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,7 +12,6 @@ import com.example.hey_dude.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
-import com.mirim.hey_dude.alarm.Fragment1;
 
 public class NavBar extends AppCompatActivity {
     Fragment1 fragment1;
@@ -64,16 +64,14 @@ public class NavBar extends AppCompatActivity {
         fab_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setAlarmFragment = new SetAlarmFragment();
+//                setAlarmFragment = new SetAlarmFragment();
+//                getSupportFragmentManager().beginTransaction().replace(R.id.container, setAlarmFragment).commit();
+//                overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
+
                 //액티비티 이동 시 화면 전환 애니메이션
-//                Intent intent = new Intent(NavBar.this, SetAlarmFragment.class);
-//                startActivity(intent);
-//                FragmentManager fragmentManager = getSupportFragmentManager();
-//                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                fragmentTransaction.replace(R.id.fragment_container, setAlarmFragment);
-//                fragmentTransaction.commit()f
-                getSupportFragmentManager().beginTransaction().replace(R.id.container, setAlarmFragment).commit();
-                overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
+                Intent intent = new Intent(getApplicationContext(), ActivityAlarm.class);
+                finishAffinity(); //쌓인 화면스택 제거
+                startActivity(intent);
             }
         });
     }

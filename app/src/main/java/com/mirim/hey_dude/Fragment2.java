@@ -168,7 +168,7 @@ public class Fragment2 extends Fragment {
     private void startdownload() {
         // firebase storage에 있는 audio 파일 다운받기.
         mStorage = FirebaseStorage.getInstance().getReference(); // firebase storage
-        StorageReference down =  mStorage.child("Audio").child("하이 너를 위한 모닝콜.mp3");
+        StorageReference down =  mStorage.child("Audio").child("new_audio.mp3");
 
         try {
             localFile = File.createTempFile("Audio", "mp3");

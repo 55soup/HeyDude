@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -18,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hey_dude"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.mirim.hey_dude.ActivityAlarm"
+            android:exported="false" />
         <activity
             android:name="com.mirim.hey_dude.FcmMessActivity"
             android:exported="false" />
@@ -65,9 +69,19 @@
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name="com.mirim.hey_dude.alarm.Fragment1"
+            android:name="com.mirim.hey_dude.Fragment1"
             android:exported="false"
             tools:ignore="Instantiatable" />
+        <receiver
+            android:name="com.mirim.hey_dude.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false"
+            />
+
+        <service
+            android:name="com.mirim.hey_dude.AlarmService"
+            android:enabled="true"
+            />
         <service
             android:name="com.mirim.hey_dude.FCM.FirebaseMessagingService"
             android:enabled="true"

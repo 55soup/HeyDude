@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.mirim.hey_dude.Login.SignUpActivity
-import com.mirim.hey_dude.alarm.Fragment1
+import com.mirim.hey_dude.Fragment1
 import okhttp3.OkHttpClient
 
 
@@ -37,7 +37,7 @@ class EmailLogin : AppCompatActivity() {
             val email = findViewById<EditText>(R.id.loginID).text.toString().trim()
             val password = findViewById<EditText>(R.id.loginPW).text.toString()
 
-            //Network가 연결이 되어있는가?
+//            Network가 연결이 되어있는가?
             val connectivityManager = application.getSystemService(ConnectivityManager::class.java)
             val currentNetwork = connectivityManager.activeNetwork
             if(currentNetwork==null)

@@ -1,4 +1,4 @@
-package com.mirim.hey_dude.alarm
+package com.mirim.hey_dude
 
 import android.app.AlarmManager
 import android.content.Context
@@ -15,6 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hey_dude.R
 import com.example.hey_dude.databinding.ActivityFragment1Binding
+import com.mirim.hey_dude.alarm.AlarmAdapter
+import com.mirim.hey_dude.alarm.AlarmDatabase
+import com.mirim.hey_dude.alarm.AlarmItem
 
 //알람 리사이클러뷰
 class Fragment1 : Fragment() {
