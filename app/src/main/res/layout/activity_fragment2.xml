@@ -13,6 +13,11 @@
         android:gravity="center"
         tools:context="com.mirim.hey_dude.Fragment2">
 
+        <Button
+            android:id="@+id/btnDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mp3 다운로드" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"

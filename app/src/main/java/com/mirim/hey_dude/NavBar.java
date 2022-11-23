@@ -35,7 +35,7 @@ public class NavBar extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         fab_btn = findViewById(R.id.FloatBtn);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment2).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -64,6 +64,7 @@ public class NavBar extends AppCompatActivity {
         fab_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setAlarmFragment = new SetAlarmFragment();
                 //액티비티 이동 시 화면 전환 애니메이션
 //                Intent intent = new Intent(NavBar.this, SetAlarmFragment.class);
 //                startActivity(intent);
@@ -71,9 +72,10 @@ public class NavBar extends AppCompatActivity {
 //                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 //                fragmentTransaction.replace(R.id.fragment_container, setAlarmFragment);
 //                fragmentTransaction.commit()f
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, setAlarmFragment).commit();
-//                overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, setAlarmFragment).commit();
+                overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
             }
         });
     }
+
 }

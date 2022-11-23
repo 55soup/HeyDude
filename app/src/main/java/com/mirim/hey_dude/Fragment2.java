@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
@@ -23,13 +24,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hey_dude.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.mirim.hey_dude.recordRecyclerView.RecordAdapter;
 import com.mirim.hey_dude.recordRecyclerView.RecordItem;
 
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 // udpate
 public class Fragment2 extends Fragment {
@@ -37,10 +45,14 @@ public class Fragment2 extends Fragment {
     RecyclerView recordRecyclerView;
     private ArrayList<RecordItem> mRecordList;
     private RecordAdapter myRecordAdapter;
+    Button btnDownload;
 
     private MediaRecorder mediaRecorder;
     private MediaPlayer mediaPlayer;
     private String AudioSavaPath = null;
+
+    private StorageReference mStorage; //firebase storage 불러오기
+    File localFile = null;
 
     public Fragment2() {
         // Required empty public constructor
@@ -53,7 +65,7 @@ public class Fragment2 extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.activity_fragment2, container, false);
         recordRecyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
-
+        btnDownload = (Button) v.findViewById(R.id.btnDownload);
         //////////////////// recyclerview
         recordRecyclerView.setHasFixedSize(true);
         recordRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
@@ -69,6 +81,14 @@ public class Fragment2 extends Fragment {
         recordRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recordRecyclerView.setAdapter(myRecordAdapter);
 
+        // ------------------------ 다운로드 ------------------------
+        btnDownload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startdownload();
+            }
+        });
+        // ------------------------ 다운로드 ------------------------
         // ---------------------recyclerview click event ---------------------
         myRecordAdapter.setOnItemClickListener(new RecordAdapter.OnItemClickListener() {
             @Override
@@ -144,6 +164,40 @@ public class Fragment2 extends Fragment {
                 }
             }
         });
+    }
+    private void startdownload() {
+        // firebase storage에 있는 audio 파일 다운받기.
+        mStorage = FirebaseStorage.getInstance().getReference(); // firebase storage
+        StorageReference down =  mStorage.child("Audio").child("하이 너를 위한 모닝콜.mp3");
+
+        try {
+            localFile = File.createTempFile("Audio", "mp3");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        down.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                Toast.makeText(getContext(),"Downloded",Toast.LENGTH_SHORT).show();
+                //재생
+                mediaPlayer = new MediaPlayer();
+                try {
+                    Toast.makeText(getContext(),"mp3 재생",Toast.LENGTH_SHORT).show();
+                    mediaPlayer.setDataSource(localFile.getPath());
+                    mediaPlayer.prepare();
+                    mediaPlayer.start();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+
+            }
+        });
+
     }
 
 }
