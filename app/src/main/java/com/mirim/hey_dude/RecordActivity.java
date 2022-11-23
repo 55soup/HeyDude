@@ -184,7 +184,7 @@ public class RecordActivity extends AppCompatActivity {
     private void uploadAudio(){
         AlertDialog.Builder dlg = new AlertDialog.Builder(RecordActivity.this);
         dlg.setTitle("알림");
-        dlg.setMessage("김하진" + "님에게"+"\n보내시겠습니까?");
+        dlg.setMessage("OO" + "님에게"+"\n보내시겠습니까?");
         dlg.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

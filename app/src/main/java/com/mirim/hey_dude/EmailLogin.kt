@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.mirim.hey_dude.Login.SignUpActivity
+import com.mirim.hey_dude.alarm.Fragment1
 import okhttp3.OkHttpClient
 
 
@@ -55,7 +56,7 @@ class EmailLogin : AppCompatActivity() {
                             val user = auth.currentUser
                             Log.d("mytag", "로그인 성공 ${user.toString()}")
                             startActivity(Intent(this,
-                                NavBar::class.java))
+                                Fragment1::class.java))
                             finish()
                         } else {
                             // If sign in fails, display a message to the user.

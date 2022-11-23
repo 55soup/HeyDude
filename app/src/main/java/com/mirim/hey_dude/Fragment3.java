@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 
 public class Fragment3 extends Fragment{
-//    FloatingActionButton floatBtnAdd;
+    //    FloatingActionButton floatBtnAdd;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private UserAdapter userAdapter;

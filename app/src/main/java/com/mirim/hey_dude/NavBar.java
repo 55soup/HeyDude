@@ -1,14 +1,11 @@
 package com.mirim.hey_dude;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.example.hey_dude.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -38,7 +35,7 @@ public class NavBar extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         fab_btn = findViewById(R.id.FloatBtn);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment2).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

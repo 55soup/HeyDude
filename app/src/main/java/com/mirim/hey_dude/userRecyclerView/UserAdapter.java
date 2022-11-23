@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.hey_dude.R;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.mirim.hey_dude.FCM.FcmNotificationsSender;
 
 import java.util.ArrayList;
 
@@ -105,7 +105,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(builder.getContext(), "이동", Toast.LENGTH_SHORT).show();
+                FcmNotificationsSender notificationsSender = new FcmNotificationsSender(
+                        "ffwJXRKXRXC-pxoD7OxEDs:APA91bFmu8-XZ-wPSZ0S1gTB9r2YuKZLm7qOs3myk5_0CaN6sxc217Md635oIOVJXsnhrpaqbow9qhPnrIe_VpFKliKWJ5eMc0GRcx4quTSxtqXO13xpbKOn-b9nBmSiu5DcwHDh1mC_",
+                        "ㅎㅇ",
+                        "ㅎㅇ",
+                        activity.getApplicationContext(),
+                        activity);
             }
         });
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {

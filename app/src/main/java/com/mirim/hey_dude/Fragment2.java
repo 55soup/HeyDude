@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +22,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hey_dude.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mirim.hey_dude.recordRecyclerView.RecordAdapter;
 import com.mirim.hey_dude.recordRecyclerView.RecordItem;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.ArrayList;
 // udpate
@@ -77,6 +83,7 @@ public class Fragment2 extends Fragment {
 
     }
 
+
     // 녹음, 파일 접근허락
     private boolean checkPermissions(){
         int first = ActivityCompat.checkSelfPermission(getContext(),
@@ -115,9 +122,28 @@ public class Fragment2 extends Fragment {
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+//                MyFirebaseMessaging();
+//                FcmNotificationsSender notificationsSender = new FcmNotificationsSender(
+//                    "ffwJXRKXRXC-pxoD7OxEDs:APA91bFmu8-XZ-wPSZ0S1gTB9r2YuKZLm7qOs3myk5_0CaN6sxc217Md635oIOVJXsnhrpaqbow9qhPnrIe_VpFKliKWJ5eMc0GRcx4quTSxtqXO13xpbKOn-b9nBmSiu5DcwHDh1mC_",
+//                    "ㅎㅇ",
+//                    "ㅎㅇ",
+//                    getActivity().getApplicationContext(),
+//                    getActivity());
+                //download
             }
         });
         builder.show();
+    }
+    public void MyFirebaseMessaging() {
+        Task<String> token = FirebaseMessaging.getInstance().getToken();
+        token.addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                if(task.isSuccessful()){
+                    Log.d("FCM Token", task.getResult());
+                }
+            }
+        });
     }
 
 }
