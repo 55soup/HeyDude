@@ -61,11 +61,6 @@ class Fragment1 : Fragment() {
             AlarmItem("졸업식","9시 30분"),
             AlarmItem("학교 가자","6시 45분"),
             AlarmItem("hi","1시30분"),
-            AlarmItem("hi","1시30분"),
-            AlarmItem("hi","1시30분"),
-            AlarmItem("hi","1시30분"),
-            AlarmItem("hi","1시30분"),
-
         )
         alarmRecyclerView = view.findViewById(R.id.Alarm_RecyclerView)
         alarmRecyclerView.layoutManager = LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false)

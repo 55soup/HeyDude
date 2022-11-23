@@ -34,7 +34,6 @@ public class NavBar extends AppCompatActivity {
         fragment2 = new Fragment2();
         fragment3 = new Fragment3();
         fragment4 = new Fragment4();
-        setAlarmFragment = new SetAlarmFragment();
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         fab_btn = findViewById(R.id.FloatBtn);
@@ -68,14 +67,15 @@ public class NavBar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //액티비티 이동 시 화면 전환 애니메이션
+                setAlarmFragment = new SetAlarmFragment();
 //                Intent intent = new Intent(NavBar.this, SetAlarmFragment.class);
 //                startActivity(intent);
 //                FragmentManager fragmentManager = getSupportFragmentManager();
 //                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 //                fragmentTransaction.replace(R.id.fragment_container, setAlarmFragment);
-//                fragmentTransaction.commit()f
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, setAlarmFragment).commit();
-//                overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
+//                fragmentTransaction.commit()
+                getSupportFragmentManager().beginTransaction().replace(R.id.container, setAlarmFragment).commit();
+                overridePendingTransition(R.anim.slide_up_enter, R.anim.slide_down_exit);
             }
         });
     }

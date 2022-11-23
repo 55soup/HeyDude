@@ -33,20 +33,16 @@ class SetAlarmFragment : Fragment() {
     lateinit var preIntent: Intent
     private var db: AlarmDatabase? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_set_alarm)
-
-    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        var setAlarmActivityBinding = inflater.inflate(R.layout.activity_set_alarm,
-            container, false)
-        var view: View = setAlarmActivityBinding.rootView
+//        var setAlarmActivityBinding = inflater.inflate(R.layout.activity_set_alarm,
+//            container, false)
+//        var view: View = setAlarmActivityBinding.rootView
+        var view = inflater.inflate(R.layout.activity_set_alarm, container, false)
 
         cancelBtn = view.findViewById(R.id.cancel_btn)
         saveBtn = view.findViewById(R.id.save_btn)
