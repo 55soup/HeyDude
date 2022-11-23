@@ -192,7 +192,7 @@ public class RecordActivity extends AppCompatActivity {
                 mProgress.show();
 
 //                StorageReference filepath = mStorage.child("Audio").child(audioFileNameMess + ".mp3");
-                StorageReference filepath = mStorage.child("Audio").child("new_audio" + ".mp3");
+                StorageReference filepath = mStorage.child("Audio").child(" " + ".mp3");
                 Uri uri = Uri.fromFile(new File(AudioSavaPath));
                 filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
